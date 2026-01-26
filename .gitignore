@@ -1,0 +1,141 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints
+*.ipynb_checkpoints/
+*/.ipynb_checkpoints/*
+
+# Colab specific
+*.ipynb_checkpoints
+
+# Environment
+.env
+.venv
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Data files (opcional - comentar si quieres versionar datasets pequeños)
+# *.xlsx
+# *.csv
+
+# ==========================================
+# ARCHIVOS INTERNOS DEL INSTRUCTOR
+# (No visibles para estudiantes en GitHub)
+# ==========================================
+
+# Memory Bank - Notas y contexto del instructor
+memory-bank/
+
+# Configuración de MCP y herramientas de desarrollo
+.mcp.json
+mcp.json
+*.mcp.json
+
+# Rúbricas y evaluaciones
+Rubrica*.xlsx
+rubrica*.xlsx
+*rubrica*.xlsx
+
+# Documentos internos del instructor
+docs/
+
+# Archivos de configuración de Claude/AI
+.claude/
+
+# Notebooks antiguos o de prueba
+Clase1.2-Electiva-Analitica-IA.ipynb
+ResumenChatbot-Clase1.ipynb
+Solucion-Taller-Final-FakeStore.ipynb
+Ejercicios-Complementarios-Clase1.md
+PROMPT_NUEVO_CHAT.md
+
+# Archivos temporales
+*.tmp
+*.temp
+~$*
+
+# Datasets grandes locales (los notebooks cargan desde URLs públicas)
+siniestros_viales_consolidados_bogota_dc.xlsx
+*.xlsx
+
+# Memory Bank working files (opcional)
+# memory-bank/work/
+
+# Large files
+*.zip
+*.tar.gz
+*.rar
+
+# Outputs generados por notebooks
+outputs/
+results/
+
+# Logs
+*.log
+
+# ========================================
+# INTERNAL FILES - NO COMPARTIR CON ESTUDIANTES
+# ========================================
+
+# Memory Bank completo - informacion interna del proyecto
+memory-bank/
+
+# Planes de implementacion y PRDs - documentos de planificacion interna
+.claude/
+
+# Rúbricas y evaluaciones - documentos de evaluacion del instructor
+Rubrica*.xlsx
+Rubrica*.xls
+*rubrica*.xlsx
+*rubrica*.xls
+RUBRICA*.xlsx
+RUBRICA*.xls
+
+# Prompts internos y documentacion para el instructor
+PROMPT_NUEVO_CHAT.md
+PROMPT_*.md
+
+# Configuracion de herramientas internas
+.mcp.json
+.mcp/
+
+# Soluciones de talleres (si se crean en el futuro)
+*Solucion*.ipynb
+*solution*.ipynb
+*Solution*.ipynb
+
+# Archivos temporales de trabajo
+*_temp.md
+*_draft.md
+*_borrador.md
