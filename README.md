@@ -50,7 +50,7 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
 <table align="center">
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/Clase1-Fundamentos-Prompting.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/Clase1-Fundamentos-Prompting.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/📘_CLASE_1-Fundamentos_y_Prompting-blue?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase 1"/>
       </a>
       <br><sub>Introducción a LLMs y técnicas de prompting</sub>
@@ -58,7 +58,7 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
   </tr>
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/Clase2-Analisis-Visualizacion.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/Clase2-Analisis-Visualizacion.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/📊_CLASE_2-Análisis_y_Visualización-green?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase 2"/>
       </a>
       <br><sub>EDA, gráficos y extracción de insights</sub>
@@ -66,7 +66,7 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
   </tr>
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/Clase3-Proyecto-Integrador.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/Clase3-Proyecto-Integrador.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/🏆_CLASE_3-Proyecto_Integrador-orange?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase 3"/>
       </a>
       <br><sub>Caso práctico completo de análisis</sub>
@@ -74,13 +74,28 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
   </tr>
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/ClaseVirtual-API.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/ClaseVirtual-API.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/🌐_VIRTUAL-APIs_REST-purple?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase Virtual"/>
       </a>
       <br><sub>Conexión y consumo de APIs (pregrabada)</sub>
     </td>
   </tr>
 </table>
+
+---
+
+## 📖 Recursos Complementarios
+
+El curso incluye documentos de referencia que te ayudarán durante y después de las clases:
+
+| Recurso | Descripción | Uso |
+|---------|-------------|-----|
+| 📋 [Business-Question-Canvas.md](complementarios/Business-Question-Canvas.md) | Plantilla para estructurar preguntas de negocio | Antes de cualquier análisis |
+| ✅ [AI-Reliability-Checklist.md](complementarios/AI-Reliability-Checklist.md) | Checklist para verificar respuestas de IA | Siempre que la IA genere código |
+| 📝 [Prompt-Playbook.md](complementarios/Prompt-Playbook.md) | Plantillas reutilizables de prompts | Durante el análisis |
+| 🎯 [Prompt-Templates-2026.md](complementarios/Prompt-Templates-2026.md) | Prompts avanzados categorizados | Para análisis complejos |
+| 🔒 [Data-Ethics-Guide.md](complementarios/Data-Ethics-Guide.md) | Guía de ética en manejo de datos | Siempre con datos sensibles |
+| 📝 [Ejercicios-Complementarios-Clase1.md](complementarios/Ejercicios-Complementarios-Clase1.md) | Ejercicios adicionales de práctica | Reforzar conceptos de clase 1 |
 
 ---
 
@@ -96,6 +111,7 @@ Durante el curso utilizaremos diferentes chatbots de IA. **Todos tienen versione
 | 🟡 **Qwen** | 100% Gratis | Sin límites, código de calidad | [chat.qwen.ai](https://chat.qwen.ai) |
 | ⚫ **Grok** | Gratis en X | Datos en tiempo real | [grok.x.ai](https://grok.x.ai) |
 | 🔴 **Kimi K2** | Gratis | Modelo MoE potente, 1T parámetros | [kimi.moonshot.cn](https://kimi.moonshot.cn) |
+| 🟠 **Julius AI** | Gratis / Pro | Análisis conversacional de datos, gráficos automáticos | [julius.ai](https://julius.ai) |
 
 ### ⚠️ Advertencia de Privacidad
 
@@ -153,14 +169,70 @@ El curso sigue una metodología estructurada para trabajar con IA:
 
 ## ✅ Evaluación
 
-Toda la evaluación se realiza **en clase**. No hay tareas para la casa.
+Toda la evaluación se realiza **en clase**. No hay tareas para la casa (excepto el Taller Final que se puede trabajar en la Clase 3).
 
-| Componente | Peso | Descripción |
-|------------|------|-------------|
-| Actividades en clase | 40% | Ejercicios prácticos durante las 3 clases |
-| Taller Final | 60% | Proyecto integrador con Fake Store API |
+| Componente | Peso | Momento | Descripción |
+|------------|------|---------|-------------|
+| 📝 **Actividad Calificable 1** | 20% | Clase 1 | Ejercicio de exploración de datos con Netflix |
+| 📝 **Actividad Calificable 2** | 20% | Clase 2 | Análisis de visualización y extracción de insights |
+| 🏆 **Taller Final** | 60% | Clase 3 | Proyecto integrador completo (ELIGE UNA OPCIÓN) |
 
-📝 Ver detalles del taller en: [`Taller-Final.md`](Taller-Final.md)
+### 📋 Detalle de Actividades Calificables
+
+**Actividad 1 (Clase 1 - 20%):**
+- Ejercicio guiado de exploración del dataset Netflix
+- Demostrar uso de `.head()`, `.info()`, `.describe()`
+- Identificar valores faltantes y proponer soluciones
+- **Entregable:** Celda de código ejecutada + interpretación escrita
+
+**Actividad 2 (Clase 2 - 20%):**
+- Crear 2 visualizaciones con interpretación de negocio
+- Aplicar el framework Insight vs. Observación
+- Usar el Decision Flow de gráficos correctamente
+- **Entregable:** 2 gráficos + párrafo de insight por cada uno
+
+**Taller Final (Clase 3 - 60%):**
+- Proyecto completo de análisis de datos con API
+- Resumen ejecutivo obligatorio
+- Se trabaja durante la Clase 3 (tiempo dedicado: 90 min)
+- **Entregable:** Notebook completo (.ipynb)
+
+### 📋 Taller Final - Cuatro Opciones Disponibles
+
+El curso ofrece **CUATRO proyectos finales** para que escojas según tus intereses:
+
+| Opción | Tema | Contexto | Enfoque |
+|:------:|------|----------|---------|
+| **Opción A** 🛒 | **Análisis de Catálogo E-Commerce** | Tienda online "Fake Store" | Estrategia de precios, inventario y marketing |
+| **Opción B** 🚴 | **City Bike Demand Intelligence** | Sistema de bicicletas compartidas | Operaciones urbanas, logística y movilidad |
+| **Opción C** 🎫 | **Customer Support Intelligence** | Empresa SaaS B2B | Soporte al cliente, mejora de producto, satisfacción |
+| **Opción D** 💰 | **SME Revenue & Pricing Optimization** | PyME de retail | Optimización de precios, márgenes y estacionalidad |
+
+#### 📄 Opción A: E-Commerce (Retail/Digital)
+- **Archivo:** [`taller-final/Taller-Final.md`](taller-final/Taller-Final.md)
+- **Para quién:** Estudiantes interesados en retail, marketing, estrategia de productos
+- **Habilidades:** Análisis de precios, categorías, calificaciones, productos estrella
+- **Tipo de análisis:** Estratégico (decisiones de merchandising y pricing)
+
+#### 📄 Opción B: City Bikes (Operaciones/Logística)
+- **Archivo:** [`taller-final/Taller-Final-CityBikes.md`](taller-final/Taller-Final-CityBikes.md)
+- **Para quién:** Estudiantes interesados en operaciones, logística, servicio público, movilidad urbana
+- **Habilidades:** Análisis temporal, patrones geográficos, disponibilidad en tiempo real
+- **Tipo de análisis:** Operativo (decisiones de redistribución y reabastecimiento)
+
+#### 📄 Opción C: Customer Support Intelligence (NUEVO - 2026)
+- **Archivo:** [`taller-final/Taller-Final-Support-Tickets.md`](taller-final/Taller-Final-Support-Tickets.md)
+- **Para quién:** Estudiantes interesados en experiencia de cliente (CX), mejora de productos, análisis de servicios
+- **Habilidades:** Análisis de tickets de soporte, segmentación de problemas, correlación con satisfacción
+- **Tipo de análisis:** Producto y servicios (identificar drivers de volumen y mejora de features)
+
+#### 📄 Opción D: SME Revenue & Pricing (NUEVO - 2026)
+- **Archivo:** [`taller-final/Taller-Final-SME-Pricing.md`](taller-final/Taller-Final-SME-Pricing.md)
+- **Para quién:** Estudiantes interesados en consultoría, PyMEs, estrategia financiera, optimización de revenue
+- **Habilidades:** Análisis de márgenes, elasticidad de precio, estacionalidad, análisis de sensibilidad
+- **Tipo de análisis:** Estratégico financiero (optimización de pricing y maximización de revenue)
+
+> **💡 Tip:** Todos los proyectos cubren los mismos objetivos de aprendizaje (APIs, limpieza de datos, visualización, insights de negocio). La diferencia es el **contexto de negocio** y el **tipo de decisiones** que simularás.
 
 ---
 

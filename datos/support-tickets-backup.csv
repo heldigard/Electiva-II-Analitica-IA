@@ -1,0 +1,101 @@
+ticket_id,categoria,canal,prioridad,estado,cliente_id,satisfaccion,fecha_creacion,hora_creacion,dia_semana,tiempo_resolucion_horas,es_resuelto,mes
+1,Bug/Error,Email,High,Resolved,45,4,2025-07-01 08:00:00,8,1,24.5,1,July
+2,Login/Authentication,Chat,Medium,Closed,78,3,2025-07-01 09:00:00,9,1,12.3,1,July
+3,Performance,Portal,Low,Resolved,123,5,2025-07-01 10:00:00,10,1,8.7,1,July
+4,Feature Request,Email,Medium,In Progress,56,4,2025-07-01 11:00:00,11,1,,0,July
+5,Bug/Error,Phone,Critical,Resolved,89,2,2025-07-01 12:00:00,12,1,72.1,1,July
+6,Billing/Payment,Chat,High,Closed,34,3,2025-07-01 13:00:00,13,1,48.2,1,July
+7,Integration,Email,Medium,Resolved,67,4,2025-07-01 14:00:00,14,1,36.8,1,July
+8,Data Export,Portal,Low,Closed,90,5,2025-07-01 15:00:00,15,1,6.5,1,July
+9,UI/UX,Chat,Medium,Open,112,3,2025-07-02 08:00:00,8,2,,0,July
+10,Bug/Error,Email,High,Resolved,145,4,2025-07-02 09:00:00,9,2,28.3,1,July
+11,Login/Authentication,Phone,Critical,Closed,23,2,2025-07-02 10:00:00,10,2,96.4,1,July
+12,Performance,Chat,Medium,Resolved,178,4,2025-07-02 11:00:00,11,2,15.6,1,July
+13,Security,Email,Critical,In Progress,56,3,2025-07-02 12:00:00,12,2,,0,July
+14,Mobile App,Portal,Low,Closed,89,5,2025-07-02 13:00:00,13,2,4.2,1,July
+15,Feature Request,Chat,Medium,Resolved,134,4,2025-07-02 14:00:00,14,2,18.9,1,July
+16,Bug/Error,Email,High,Closed,67,3,2025-07-03 08:00:00,8,3,42.7,1,July
+17,Billing/Payment,Phone,Medium,Resolved,90,2,2025-07-03 09:00:00,9,3,56.1,1,July
+18,Integration,Chat,Low,Open,123,4,2025-07-03 10:00:00,10,3,,0,July
+19,Login/Authentication,Email,High,Closed,45,4,2025-07-03 11:00:00,11,3,22.4,1,July
+20,Performance,Portal,Critical,Resolved,178,3,2025-07-03 12:00:00,12,3,84.6,1,July
+21,Bug/Error,Chat,Medium,Closed,112,4,2025-07-03 13:00:00,13,3,31.2,1,July
+22,Data Export,Email,Low,Resolved,56,5,2025-07-03 14:00:00,14,3,7.8,1,July
+23,UI/UX,Phone,Medium,In Progress,89,3,2025-07-04 08:00:00,8,4,,0,July
+24,Feature Request,Chat,High,Closed,34,4,2025-07-04 09:00:00,9,4,38.5,1,July
+25,Bug/Error,Email,Critical,Resolved,67,2,2025-07-04 10:00:00,10,4,112.3,1,July
+26,Login/Authentication,Portal,Medium,Closed,145,4,2025-07-04 11:00:00,11,4,16.7,1,July
+27,Performance,Chat,Low,Resolved,23,5,2025-07-04 12:00:00,12,4,9.4,1,July
+28,Billing/Payment,Email,High,Open,178,2,2025-07-04 13:00:00,13,4,,0,July
+29,Integration,Phone,Medium,Closed,90,3,2025-07-04 14:00:00,14,4,44.8,1,July
+30,Security,Chat,Critical,Resolved,123,3,2025-07-05 08:00:00,8,5,98.2,1,July
+31,Bug/Error,Email,High,Closed,56,4,2025-07-05 09:00:00,9,5,26.9,1,July
+32,Mobile App,Portal,Low,Resolved,89,5,2025-07-05 10:00:00,10,5,5.3,1,July
+33,Feature Request,Chat,Medium,In Progress,134,4,2025-07-05 11:00:00,11,5,,0,July
+34,Login/Authentication,Email,Critical,Closed,45,3,2025-07-05 12:00:00,12,5,68.4,1,July
+35,Performance,Phone,High,Resolved,67,4,2025-07-05 13:00:00,13,5,34.7,1,July
+36,Bug/Error,Chat,Medium,Closed,178,3,2025-07-06 08:00:00,8,6,21.5,1,July
+37,Data Export,Email,Low,Resolved,112,5,2025-07-06 09:00:00,9,6,8.1,1,July
+38,UI/UX,Portal,Medium,Open,23,4,2025-07-06 10:00:00,10,6,,0,July
+39,Billing/Payment,Chat,High,Closed,90,2,2025-07-06 11:00:00,11,6,52.6,1,July
+40,Integration,Email,Medium,Resolved,145,4,2025-07-06 12:00:00,12,6,29.3,1,July
+41,Bug/Error,Phone,Critical,Closed,34,3,2025-07-07 08:00:00,8,0,88.7,1,July
+42,Login/Authentication,Chat,High,Resolved,56,4,2025-07-07 09:00:00,9,0,18.2,1,July
+43,Performance,Email,Medium,In Progress,89,3,2025-07-07 10:00:00,10,0,,0,July
+44,Security,Portal,Critical,Closed,123,3,2025-07-07 11:00:00,11,0,76.5,1,July
+45,Feature Request,Chat,Low,Resolved,67,5,2025-07-07 12:00:00,12,0,11.4,1,July
+46,Mobile App,Email,Medium,Closed,178,4,2025-07-07 13:00:00,13,0,23.8,1,July
+47,Bug/Error,Phone,High,Resolved,145,3,2025-07-08 08:00:00,8,1,45.2,1,July
+48,Data Export,Chat,Low,Open,90,4,2025-07-08 09:00:00,9,1,,0,July
+49,Login/Authentication,Email,Medium,Closed,34,4,2025-07-08 10:00:00,10,1,14.6,1,July
+50,Billing/Payment,Portal,Critical,Resolved,112,2,2025-07-08 11:00:00,11,1,62.9,1,July
+51,Performance,Chat,High,Closed,56,4,2025-07-08 12:00:00,12,1,32.1,1,July
+52,Bug/Error,Email,Medium,Resolved,89,3,2025-07-08 13:00:00,13,1,19.7,1,July
+53,Integration,Phone,Low,In Progress,123,4,2025-07-09 08:00:00,8,2,,0,July
+54,UI/UX,Chat,Medium,Closed,67,4,2025-07-09 09:00:00,9,2,27.4,1,July
+55,Feature Request,Email,High,Resolved,178,3,2025-07-09 10:00:00,10,2,41.8,1,July
+56,Bug/Error,Portal,Critical,Closed,145,3,2025-07-09 11:00:00,11,2,104.5,1,July
+57,Login/Authentication,Chat,Medium,Resolved,23,5,2025-07-09 12:00:00,12,2,12.9,1,July
+58,Security,Email,Critical,Open,90,2,2025-07-09 13:00:00,13,2,,0,July
+59,Performance,Phone,High,Closed,34,4,2025-07-10 08:00:00,8,3,38.2,1,July
+60,Data Export,Chat,Low,Resolved,56,5,2025-07-10 09:00:00,9,3,6.7,1,July
+61,Bug/Error,Email,Medium,Closed,112,3,2025-07-10 10:00:00,10,3,24.1,1,July
+62,Billing/Payment,Portal,High,Resolved,89,2,2025-07-10 11:00:00,11,3,58.3,1,July
+63,Mobile App,Chat,Low,In Progress,123,4,2025-07-10 12:00:00,12,3,,0,July
+64,Integration,Email,Medium,Closed,67,4,2025-07-10 13:00:00,13,3,33.6,1,July
+65,Bug/Error,Phone,Critical,Resolved,178,3,2025-07-11 08:00:00,8,4,82.4,1,July
+66,Login/Authentication,Chat,High,Closed,145,4,2025-07-11 09:00:00,9,4,20.8,1,July
+67,Feature Request,Email,Medium,Resolved,90,4,2025-07-11 10:00:00,10,4,15.3,1,July
+68,Performance,Portal,Low,Open,34,5,2025-07-11 11:00:00,11,4,,0,July
+69,UI/UX,Chat,Medium,Closed,56,3,2025-07-11 12:00:00,12,4,28.7,1,July
+70,Bug/Error,Email,High,Resolved,23,4,2025-07-11 13:00:00,13,4,36.2,1,July
+71,Security,Phone,Critical,Closed,112,2,2025-07-12 08:00:00,8,5,94.6,1,July
+72,Data Export,Chat,Low,Resolved,89,5,2025-07-12 09:00:00,9,5,7.2,1,July
+73,Login/Authentication,Email,Medium,In Progress,123,3,2025-07-12 10:00:00,10,5,,0,July
+74,Billing/Payment,Portal,High,Closed,67,3,2025-07-12 11:00:00,11,5,46.5,1,July
+75,Bug/Error,Chat,Medium,Resolved,178,4,2025-07-12 12:00:00,12,5,22.9,1,July
+76,Integration,Email,Low,Closed,145,4,2025-07-12 13:00:00,13,5,31.4,1,July
+77,Performance,Phone,Critical,Resolved,90,3,2025-07-13 08:00:00,8,6,78.1,1,July
+78,Feature Request,Chat,High,Open,34,4,2025-07-13 09:00:00,9,6,,0,July
+79,Mobile App,Email,Medium,Closed,56,4,2025-07-13 10:00:00,10,6,17.8,1,July
+80,Bug/Error,Portal,High,Resolved,112,3,2025-07-13 11:00:00,11,6,43.2,1,July
+81,Login/Authentication,Chat,Low,Closed,89,5,2025-07-14 08:00:00,8,0,9.6,1,July
+82,UI/UX,Email,Medium,Resolved,123,4,2025-07-14 09:00:00,9,0,25.4,1,July
+83,Bug/Error,Phone,Critical,In Progress,67,2,2025-07-14 10:00:00,10,0,,0,July
+84,Security,Chat,High,Closed,178,3,2025-07-14 11:00:00,11,0,66.8,1,July
+85,Performance,Email,Medium,Resolved,145,4,2025-07-14 12:00:00,12,0,19.3,1,July
+86,Data Export,Portal,Low,Closed,23,5,2025-07-14 13:00:00,13,0,5.8,1,July
+87,Billing/Payment,Chat,Critical,Resolved,90,2,2025-07-15 08:00:00,8,1,71.5,1,July
+88,Bug/Error,Email,High,Open,34,3,2025-07-15 09:00:00,9,1,,0,July
+89,Integration,Phone,Medium,Closed,56,4,2025-07-15 10:00:00,10,1,35.7,1,July
+90,Login/Authentication,Chat,Low,Resolved,112,4,2025-07-15 11:00:00,11,1,11.2,1,July
+91,Feature Request,Email,Medium,Closed,89,4,2025-07-15 12:00:00,12,1,29.8,1,July
+92,Bug/Error,Portal,High,Resolved,123,3,2025-07-15 13:00:00,13,1,40.1,1,July
+93,Performance,Chat,Critical,In Progress,67,3,2025-07-16 08:00:00,8,2,,0,July
+94,UI/UX,Email,Medium,Closed,178,4,2025-07-16 09:00:00,9,2,23.6,1,July
+95,Mobile App,Phone,Low,Resolved,145,5,2025-07-16 10:00:00,10,2,8.4,1,July
+96,Bug/Error,Chat,Medium,Closed,90,4,2025-07-16 11:00:00,11,2,18.5,1,July
+97,Security,Email,Critical,Resolved,23,2,2025-07-16 12:00:00,12,2,86.3,1,July
+98,Login/Authentication,Portal,High,Open,34,3,2025-07-16 13:00:00,13,2,,0,July
+99,Data Export,Chat,Low,Closed,56,5,2025-07-17 08:00:00,8,3,6.1,1,July
+100,Billing/Payment,Email,Medium,Resolved,112,3,2025-07-17 09:00:00,9,3,54.7,1,July

@@ -75,10 +75,7 @@ docs/
 
 # Notebooks antiguos o de prueba
 Clase1.2-Electiva-Analitica-IA.ipynb
-ResumenChatbot-Clase1.ipynb
-Solucion-Taller-Final-FakeStore.ipynb
-Ejercicios-Complementarios-Clase1.md
-PROMPT_NUEVO_CHAT.md
+#ResumenChatbot-Clase1.ipynb
 
 # Archivos temporales
 *.tmp

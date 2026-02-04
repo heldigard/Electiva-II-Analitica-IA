@@ -10,7 +10,7 @@
 | Aspecto | Detalle |
 |---------|---------|
 | **Duración** | Realizado completamente en clase |
-| **Modalidad** | Individual |
+| **Modalidad** | Individual/Grupal (máx. 3 personas) |
 | **Entregable** | Notebook de Google Colab (.ipynb) |
 | **Peso** | 60% de la nota final |
 
@@ -57,14 +57,18 @@ Demostrar tu capacidad para realizar un análisis exploratorio completo de datos
 
 ## ✅ Rúbrica de Evaluación
 
-### Criterio 1: Conexión a API y Extracción de Datos (25%)
+> **Nota:** Esta rúbrica unificada aplica a todas las opciones de Taller Final. Para más detalles, consulta [docs/sistema-evaluacion.md](docs/sistema-evaluacion.md).
+
+### Criterio 1: Conexión a API y Extracción de Datos (15%)
+
+> **Nota:** La conexión a APIs es un **medio**, no el **fin**. Lo valioso es lo que haces con los datos.
 
 | Nivel | Descripción | Puntos |
 |-------|-------------|--------|
-| **Excelente** | Conexión exitosa, verifica status code, maneja errores | 25 |
-| **Bueno** | Conexión exitosa, verifica status code | 20 |
-| **Básico** | Conexión exitosa sin verificación | 15 |
-| **Insuficiente** | No logra conectar o extraer datos | 0-10 |
+| **Excelente** | Conexión exitosa, verifica status code, maneja errores | 15 |
+| **Bueno** | Conexión exitosa, verifica status code | 12 |
+| **Básico** | Conexión exitosa sin verificación | 9 |
+| **Insuficiente** | No logra conectar o extraer datos | 0-6 |
 
 **Qué debe incluir:**
 ```python
@@ -84,14 +88,14 @@ else:
 
 ---
 
-### Criterio 2: Limpieza y Transformación de Datos (25%)
+### Criterio 2: Limpieza y Transformación de Datos (20%)
 
 | Nivel | Descripción | Puntos |
 |-------|-------------|--------|
-| **Excelente** | Transforma datos anidados, tipos correctos, sin errores | 25 |
-| **Bueno** | Transforma datos anidados correctamente | 20 |
-| **Básico** | Intenta transformar pero con errores menores | 15 |
-| **Insuficiente** | No transforma la columna rating o tiene errores graves | 0-10 |
+| **Excelente** | Transforma datos anidados, tipos correctos, sin errores | 20 |
+| **Bueno** | Transforma datos anidados correctamente | 16 |
+| **Básico** | Intenta transformar pero con errores menores | 12 |
+| **Insuficiente** | No transforma la columna rating o tiene errores graves | 0-8 |
 
 **El reto clave:** La columna `rating` viene anidada como:
 ```json
@@ -104,14 +108,16 @@ Debe separarse en:
 
 ---
 
-### Criterio 3: Análisis y Visualización (25%)
+### Criterio 3: Análisis y Visualización (20%)
+
+> **Nota:** Este criterio se redujo del 25% al 20%. Las visualizaciones son herramientas para comunicar, no el objetivo principal. Lo valioso es el **insight** que comunican, no el gráfico en sí.
 
 | Nivel | Descripción | Puntos |
 |-------|-------------|--------|
-| **Excelente** | 4+ visualizaciones relevantes, bien formateadas, con interpretación | 25 |
-| **Bueno** | 3-4 visualizaciones correctas con interpretación | 20 |
-| **Básico** | 2-3 visualizaciones sin interpretación completa | 15 |
-| **Insuficiente** | Menos de 2 visualizaciones o sin sentido | 0-10 |
+| **Excelente** | 4+ visualizaciones relevantes, bien formateadas, con interpretación | 20 |
+| **Bueno** | 3-4 visualizaciones correctas con interpretación | 16 |
+| **Básico** | 2-3 visualizaciones sin interpretación completa | 12 |
+| **Insuficiente** | Menos de 2 visualizaciones o sin sentido | 0-8 |
 
 **Visualizaciones requeridas (mínimo 4):**
 
@@ -157,13 +163,16 @@ Debe separarse en:
 
 ---
 
-### Criterio 5: Resumen Ejecutivo (Bonus +10%)
+### Criterio 5: Resumen Ejecutivo (20%)
+
+> **Nota importante:** Este criterio ahora es OBLIGATORIO (antes era bonus). El resumen ejecutivo es donde **demuestras el valor real de tu análisis**. Es tu oportunidad de persuadir y tomar decisiones.
 
 | Nivel | Descripción | Puntos |
 |-------|-------------|--------|
-| **Excelente** | Resumen claro, 3 hallazgos, 2 recomendaciones accionables | +10 |
-| **Bueno** | Resumen con hallazgos pero recomendaciones genéricas | +5 |
-| **Básico** | Resumen incompleto | +2 |
+| **Excelente** | Resumen claro, 3 hallazgos con evidencia, 2 recomendaciones accionables | 20 |
+| **Bueno** | Resumen con hallazgos pero recomendaciones genéricas | 16 |
+| **Básico** | Resumen incompleto o sin recomendaciones claras | 12 |
+| **Insuficiente** | No incluye resumen ejecutivo | 0-8 |
 
 **Estructura esperada:**
 ```markdown
@@ -261,7 +270,7 @@ Antes de entregar, verifica:
 - [ ] Cada visualización tiene título y etiquetas
 - [ ] Respondes las 4 preguntas de negocio
 - [ ] Incluyes interpretación/insight para cada análisis
-- [ ] (Bonus) Incluyes un resumen ejecutivo
+- [ ] **Incluyes un resumen ejecutivo (OBLIGATORIO - 20% de la nota)**
 
 ---
 

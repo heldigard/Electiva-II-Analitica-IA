@@ -1,0 +1,21 @@
+producto,categoria,precio_base,costo,margen_base
+Leche Entera 1L,Lácteos,4500,3150,30.0
+Yogurt Natural,Lácteos,3800,2660,30.0
+Queso Fresco,Lácteos,9500,7125,25.0
+Mantequilla,Lácteos,7500,5250,30.0
+Agua Mineral,Bebidas,2000,1200,40.0
+Jugo de Naranja,Bebidas,4800,2880,40.0
+Gaseosa Cola,Bebidas,3500,2100,40.0
+Cerveza,Bebidas,4200,2940,30.0
+Papas Fritas,Snacks,5500,3300,40.0
+Nachos,Snacks,6500,4550,30.0
+Popcorn,Snacks,4000,2400,40.0
+Mix Frutos Secos,Snacks,14000,9800,30.0
+Detergente,Limpieza,12000,8400,30.0
+Jabón Líquido,Limpieza,8000,5600,30.0
+Cloro,Limpieza,3500,2100,40.0
+Esponjas,Limpieza,1500,900,40.0
+Corn Flakes,Cereal,8500,5950,30.0
+Avena,Cereal,6000,3600,40.0
+Granola,Cereal,11000,7700,30.0
+Cereal con Chocolate,Cereal,10500,7350,30.0
