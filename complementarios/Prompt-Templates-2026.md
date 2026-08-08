@@ -9,8 +9,8 @@
 
 Este documento contiene **plantillas de prompts probadas** para análisis de datos con IA. Usa estas plantillas como punto de partida y adáptalas a tu contexto específico.
 
-**Actualizado para:** Enero 2026
-**Compatible con:** ChatGPT, Claude, Qwen, Gemini, Grok, Kimi K2, Julius AI
+**Actualizado para:** Agosto 2026
+**Compatible con:** ChatGPT (GPT-5.6), Claude (Sonnet 5 / Opus 5), Qwen (Qwen3.5), Gemini en Colab, Grok, Kimi (K3), Julius AI
 
 ---
 

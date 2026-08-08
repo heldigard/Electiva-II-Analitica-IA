@@ -486,10 +486,11 @@ Para evaluar el éxito de estas recomendaciones, monitorear:
 ### Chatbots de IA para Ayuda
 
 Si te quedas atascado, puedes usar:
-- **Qwen** (100% gratuito) - Recomendado
-- **ChatGPT** (GPT-4o mini)
-- **Google AI Studio** (Gemini)
-- **Claude**
+- **Qwen** (Qwen3.5, 100% gratuito) - Recomendado
+- ✨ **Gemini en Colab** (integrado en tu notebook, panel ✨)
+- **ChatGPT** (GPT-5.6)
+- **Claude** (Sonnet 5)
+- **Kimi** (K3, cuota gratuita generosa)
 
 **Ejemplo de prompt para pedir ayuda:**
 ```

@@ -1,5 +1,8 @@
 # Ejercicios Complementarios - Clase 1: Exploración Inicial
 
+**Actualizado para:** Agosto 2026
+**Dataset:** el mismo de la Clase 1 — catálogo de Netflix (6,234 títulos), cargado como `df = pd.read_csv(url)`.
+
 **Propósito:** Estos ejercicios refuerzan los conceptos aprendidos en la Clase 1 y te ayudan a consolidar habilidades antes de avanzar a la Clase 2.
 
 ---
@@ -35,31 +38,30 @@ Siempre que obtengas un resultado, pregúntate:
 - ¿El orden de magnitud es correcto?
 - ¿Hay algo extraño en los datos?
 
-**Ejemplo:** Si obtienes que el promedio de gravedad es 2.63, verifica: ¿Qué significa el código 2? (R: Con Heridos) → ¡Tiene sentido!
+**Ejemplo:** Si la IA te dice que el año promedio de estreno (`release_year`) es **2013.4**, verifica: ¿tiene sentido? El catálogo se concentra en contenido reciente (2015-2020) con una cola larga de clásicos desde 1925 → ¡Tiene sentido!
 
 ---
 
 ## 📝 Ejercicios de Práctica (5-10 min cada uno)
 
-### **Ejercicio 1: Conteo de Códigos**
+### **Ejercicio 1: Conteo de Categorías**
 
 **Objetivo:** Practicar el uso de `value_counts()` para entender distribuciones.
 
-**Pregunta:** ¿Cuántos siniestros de cada tipo de gravedad hay en el dataset?
+**Pregunta:** ¿Cuántos títulos del catálogo son películas y cuántos son series de TV?
 
 **Prompt sugerido para la IA:**
-> Usando el DataFrame df_siniestros, genera el código para contar cuántos registros hay de cada valor único en la columna GRAVEDAD. Usa el método value_counts().
+> Usando el DataFrame df, genera el código para contar cuántos registros hay de cada valor único en la columna type. Usa el método value_counts().
 
 **Resultado esperado:**
 ```
-2    106764  # Con Heridos
-3     72147  # Solo Daños
-1     17241  # Con Muertos
+Movie      4265   # 68% del catálogo
+TV Show    1969   # 32% del catálogo
 ```
 
 **Verificación de comprensión:**
 - ✅ ¿Puedes interpretar qué significa cada número?
-- ✅ ¿Qué tipo de gravedad es el más común?
+- ✅ ¿Qué tipo de contenido domina el catálogo? (R: las películas, con cerca de 2 de cada 3 títulos)
 
 ---
 
@@ -67,93 +69,101 @@ Siempre que obtengas un resultado, pregúntate:
 
 **Objetivo:** Aprender a filtrar el DataFrame para analizar subconjuntos específicos.
 
-**Pregunta:** ¿Cuántos siniestros con muertos (GRAVEDAD = 1) ocurrieron?
+**Pregunta:** ¿Cuántos títulos tienen rating **TV-MA** (contenido solo para adultos)?
 
 **Prompt sugerido para la IA:**
-> Usando el DataFrame df_siniestros, genera el código para filtrar y mostrar únicamente las filas donde la columna GRAVEDAD sea igual a 1. Luego, cuenta cuántas filas hay.
+> Usando el DataFrame df, genera el código para filtrar y mostrar únicamente las filas donde la columna rating sea igual a 'TV-MA'. Luego, cuenta cuántas filas hay.
 
 **Resultado esperado:**
 ```
-17,241 siniestros con muertos
+2,027 títulos con rating TV-MA
 ```
 
 **Verificación de comprensión:**
 - ✅ ¿Usaste el operador `==` (igual) y no `=` (asignación)?
+- ✅ ¿Notaste que `'TV-MA'` va entre comillas porque es texto? (Un número como `2020` no las necesita)
 - ✅ ¿Entiendes la diferencia entre filtrar y contar?
 
 ---
 
 ### **Ejercicio 3: Análisis Temporal Básico**
 
-**Objetivo:** Extraer información de la columna datetime.
+**Objetivo:** Convertir texto a fecha y extraer información temporal.
 
-**Pregunta:** ¿En qué año ocurrieron más siniestros?
+**Pregunta:** ¿En qué año se agregaron más títulos al catálogo de Netflix?
 
 **Prompt sugerido para la IA:**
-> Usando el DataFrame df_siniestros que tiene una columna FECHA_HORA de tipo datetime, genera el código para:
-> 1. Extraer el año de la columna FECHA_HORA en una nueva columna llamada ANIO
-> 2. Contar cuántos siniestros hubo por año
-> 3. Mostrar el resultado ordenado de mayor a menor
+> Usando el DataFrame df, la columna date_added viene como texto (ej: "September 25, 2021"). Genera el código para:
+> 1. Convertir date_added a tipo datetime con pd.to_datetime()
+> 2. Extraer el año en una nueva columna llamada anio_agregado
+> 3. Contar cuántos títulos se agregaron por año, ordenado de mayor a menor
 
 **Resultado esperado:**
-```python
-# Año con más siniestros
-2019: [cantidad más alta]
-2018: [segunda más alta]
+```
+2019: 2,349 títulos  # año pico de adiciones
+2018: 1,782
+2017: 1,300
 ...
 ```
 
 **Verificación de comprensión:**
+- ✅ ¿Convertiste la columna a `datetime` ANTES de extraer el año? (con texto plano `.dt.year` falla)
 - ✅ ¿Usaste `.dt.year` para extraer el año?
-- ✅ ¿El resultado tiene sentido con los datos?
+- ✅ ¿El resultado tiene sentido? (Netflix expandió agresivamente su catálogo hasta 2019)
 
 ---
 
-### **Ejercicio 4: Diccionario de Datos**
+### **Ejercicio 4: Descifrar Códigos (Ratings)**
 
-**Objetivo:** Practicar el uso del diccionario para descifrar códigos.
+**Objetivo:** Interpretar códigos de clasificación y crear una columna nueva con su significado.
 
-**Pregunta:** ¿Qué significa el código 1 en la columna DISENO_LUGAR?
+**Pregunta:** ¿Qué significa cada código de la columna `rating`?
 
 **Prompt sugerido para la IA:**
-> Usando el DataFrame df_diccionario, genera el código para filtrar y mostrar las filas donde:
-> - La columna CAMPO sea 'DISENO_LUGAR'
-> - La columna CODIGO sea 1
+> La columna rating del DataFrame df tiene códigos como 'TV-MA', 'TV-14', 'TV-PG', 'R', 'PG-13'. Primero explícame qué significa cada uno. Luego genera el código para crear una columna nueva llamada rating_descripcion que traduzca cada código a su significado usando un diccionario y el método .map().
 
 **Resultado esperado:**
 ```
-HOJA        CAMPO         CODIGO  DESCRIPCION
-SINIESTROS  DISENO_LUGAR  1       Intersección
+rating      rating_descripcion
+TV-MA       Solo adultos (17+)
+TV-14       Mayores de 14 años
+TV-PG       Guía parental sugerida
+R           Restringido (menores acompañados)
+PG-13       Mayores de 13 años
+...
 ```
 
 **Verificación de comprensión:**
-- ✅ ¿Usaste el operador `&` para combinar dos condiciones?
-- ✅ ¿Entiendes por qué es importante el diccionario?
+- ✅ ¿Entiendes por qué es importante descifrar los códigos ANTES de analizar?
+- ✅ Después del `.map()`, ¿verificaste si quedaron valores `NaN`? (Pista: unos 10 títulos no tienen rating y quedarán vacíos — ¡buen sanity check!)
 
 ---
 
 ### **Ejercicio 5: Estadística Descriptiva Selectiva**
 
-**Objetivo:** Aprender a calcular estadísticas solo para columnas relevantes.
+**Objetivo:** Calcular distribuciones porcentuales solo para un subconjunto relevante.
 
-**Pregunta:** ¿Cuál es la distribución de la columna CLASE?
+**Pregunta:** Dentro de las **películas** (no series), ¿qué porcentaje tiene cada rating?
 
 **Prompt sugerido para la IA:**
-> Usando el DataFrame df_siniestros, genera el código para mostrar:
-> 1. El conteo de valores únicos de la columna CLASE
-> 2. El porcentaje que representa cada valor sobre el total
+> Usando el DataFrame df, genera el código para:
+> 1. Filtrar solo las filas donde type sea 'Movie'
+> 2. Sobre ese subconjunto, mostrar el porcentaje que representa cada valor de rating sobre el total
+> Pista: usa value_counts() con el argumento normalize=True
 
 **Resultado esperado:**
 ```
-1    Choque         143,XXX  (73%)
-2    Atropello       25,XXX  (13%)
-3    Volcamiento     17,XXX  (9%)
+TV-MA     31.6%
+TV-14     24.3%
+R         11.9%
+TV-PG     10.1%
 ...
 ```
 
 **Verificación de comprensión:**
-- ✅ ¿Qué tipo de siniestro es el más común?
+- ✅ ¿Filtraste PRIMERO por tipo y calculaste porcentajes DESPUÉS?
 - ✅ ¿Usaste `normalize=True` para obtener porcentajes?
+- ✅ ¿Qué le dirías a un directivo? (R: más de la mitad de las películas del catálogo son para público adolescente-adulto)
 
 ---
 
@@ -161,54 +171,59 @@ SINIESTROS  DISENO_LUGAR  1       Intersección
 
 ### **Verificación 1: Tipos de Datos en Pandas**
 
-**Pregunta:** ¿Por qué es importante que la columna FECHA_HORA sea de tipo `datetime` y no `object` (texto)?
+**Pregunta:** ¿Por qué es importante convertir la columna `date_added` de `object` (texto) a `datetime`?
 
 **Respuesta correcta:**
 ```
 Porque como datetime, Python puede:
-- Extraer año, mes, día, hora fácilmente con .dt.year, .dt.month, etc.
-- Realizar operaciones matemáticas con fechas (ej: diferencia entre dos fechas)
+- Extraer año, mes, día fácilmente con .dt.year, .dt.month, etc.
+- Realizar operaciones con fechas (ej: ¿cuántos días lleva un título en el catálogo?)
 - Ordenar cronológicamente de forma correcta
-- Crear gráficos de series temporales
+- Crear gráficos de series temporales (Clase 2)
 
-Como texto (object), Python solo ve cadenas de caracteres y no puede hacer nada de esto.
+Como texto (object), Python solo ve cadenas de caracteres: "September 25, 2021"
+se ordenaría alfabéticamente, no cronológicamente.
 ```
 
 ---
 
 ### **Verificación 2: Valores Nulos (NaN)**
 
-**Pregunta:** ¿Qué significa un valor `NaN` en la columna CHOQUE y por qué hay tantos?
+**Pregunta:** La columna `director` tiene 1,969 valores `NaN` (casi un tercio del dataset). ¿Es un error de los datos?
 
 **Respuesta correcta:**
 ```
-NaN significa "Not a Number" (No es un Número), y en este contexto significa "No aplica" o "dato faltante".
+NaN significa "Not a Number" (dato faltante), y en este contexto significa "no registrado".
 
-Hay muchos NaN en CHOQUE porque esta columna solo se llena cuando el siniestro ES un choque
-entre vehículos. Si el siniestro fue un atropello o volcamiento, el campo CHOQUE no aplica,
-por lo tanto queda vacío (NaN).
+No es un error: los NaN de director se concentran en las series de TV
+(1,841 de los 1,969). Las series rara vez registran un "director" único
+porque tienen muchos directores por episodio; en cambio, solo 128 películas
+carecen de director.
 
-No es un error de los datos, es una característica: NO todos los siniestros son choques.
+Lección: antes de "limpiar" NaN eliminándolos, pregúntate POR QUÉ faltan.
+Eliminar filas sin director borraría casi todas las series del análisis.
 ```
 
 ---
 
 ### **Verificación 3: Categorías vs Números**
 
-**Pregunta:** ¿Por qué convertimos la columna CHOQUE de `float64` a `category`?
+**Pregunta:** ¿Por qué conviene convertir `type` y `rating` de `object` a `category`, pero NO `release_year`?
 
 **Respuesta correcta:**
 ```
-Porque CHOQUE no es una cantidad numérica (como precio o peso), es una CATEGORÍA.
-
-Dejarla como float (número) es peligroso porque pandas podría:
-- Calcular el "promedio" de CHOQUE (¡no tiene sentido!)
-- Ordenar CHOQUE de menor a mayor (¿1 es "menor" que 4? No, son categorías)
-
-Como category, pandas entiende que son grupos limitados y:
+type y rating son CATEGORÍAS: un conjunto pequeño y fijo de grupos
+(2 tipos; ~14 ratings). Como category, pandas:
 - Usa menos memoria
-- Evita operaciones matemáticas incorrectas
-- Permite análisis correctos (agrupaciones, conteos)
+- Facilita conteos y agrupaciones
+- Evita tratamientos incorrectos
+
+release_year SÍ es un número de verdad: tiene sentido calcular su promedio
+(2013.4), su mínimo (1925), su máximo (2020) o restarlo del año actual
+para saber la antigüedad del contenido.
+
+Regla práctica: si calcular el promedio NO tiene sentido → es categoría.
+Si el promedio te dice algo del negocio → es número.
 ```
 
 ---
@@ -219,10 +234,10 @@ Como category, pandas entiende que son grupos limitados y:
 
 ```python
 ❌ INCORRECTO:
-df[df['GRAVEDAD'] = 1]  # Esto es asignación, no comparación
+df[df['type'] = 'Movie']  # Esto es asignación, no comparación
 
 ✅ CORRECTO:
-df[df['GRAVEDAD'] == 1]  # Esto es comparación
+df[df['type'] == 'Movie']  # Esto es comparación
 ```
 
 **Recuerda:** Un `=` asigna valor, dos `==` comparan valores.
@@ -233,15 +248,15 @@ df[df['GRAVEDAD'] == 1]  # Esto es comparación
 
 ```python
 ❌ INCORRECTO:
-df.drop(columns['DIRECCION'])  # No modifica el DataFrame original
+df.drop(columns=['description'])  # No modifica el DataFrame original
 
 ✅ CORRECTO:
-df.drop(columns=['DIRECCION'], inplace=True)  # Sí modifica el original
+df.drop(columns=['description'], inplace=True)  # Sí modifica el original
 ```
 
 **Alternativa sin inplace:**
 ```python
-df = df.drop(columns=['DIRECCION'])  # Reasigna el resultado
+df = df.drop(columns=['description'])  # Reasigna el resultado
 ```
 
 ---
@@ -250,17 +265,17 @@ df = df.drop(columns=['DIRECCION'])  # Reasigna el resultado
 
 ```python
 ❌ RIESGOSO:
-# Ejecutar código de la IA sin entenderlo
-df_siniestros.groupby('CLASE').mean()
+# Pedir "el promedio de duración de las películas" y ejecutar sin revisar
+df['duration'].mean()  # ¡FALLA! duration es texto: "90 min", "2 Seasons"
 
 ✅ MEJOR:
-# Primero entender qué hace el código, luego ejecutar
-# ¿.groupby('CLASE') agrupa por tipo de siniestro
-# ¿.mean() calcula promedio de todas las columnas numéricas
-# ¿Tiene sentido calcular promedio de CODIGO_ACCIDENTE? NO!
+# Verificar primero el tipo de dato: df['duration'].dtype → object (texto)
+# El código correcto debe extraer el número antes de promediar:
+# df[df['type']=='Movie']['duration'].str.extract('(\d+)').astype(float).mean()
+# Resultado correcto: ~99.1 minutos
 ```
 
-**Lección:** La IA puede generar código que se ejecuta pero que metodológicamente no tiene sentido. Tú eres el filtro crítico.
+**Lección:** La IA puede generar código que se ejecuta sin errores pero que metodológicamente no tiene sentido (o que falla por un tipo de dato inesperado). Tú eres el filtro crítico: revisa el tipo de cada columna con `.info()` antes de operar.
 
 ---
 
@@ -276,13 +291,13 @@ df_siniestros.groupby('CLASE').mean()
 
 Antes de pasar a la Clase 2 (Análisis y Visualización), asegúrate de que puedes:
 
-- [ ] Cargar un archivo Excel en un DataFrame
+- [ ] Cargar un CSV desde una URL en un DataFrame (`pd.read_csv(url)`)
 - [ ] Usar `.head()`, `.info()`, y `.describe()` para explorar datos
 - [ ] Filtrar datos con condiciones (`df[df['columna'] == valor]`)
 - [ ] Contar valores únicos con `.value_counts()`
 - [ ] Entender la diferencia entre tipos de datos (int64, float64, object, category, datetime)
-- [ ] Usar un diccionario de datos para descifrar códigos
-- [ ] Crear una nueva columna a partir de existentes (ingeniería de características)
+- [ ] Convertir texto a fecha con `pd.to_datetime()` y extraer el año con `.dt.year`
+- [ ] Descifrar códigos (ratings) con ayuda de la IA y crear columnas nuevas con `.map()`
 - [ ] Interpretar resultados en contexto de negocio
 
 **Si completaste todos los ejercicios y entendiste las verificaciones, ¡estás listo para la Clase 2!** 🎉

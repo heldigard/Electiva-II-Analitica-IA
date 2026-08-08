@@ -54,8 +54,8 @@ venv.bak/
 # (No visibles para estudiantes en GitHub)
 # ==========================================
 
-# Memory Bank - Notas y contexto del instructor
-memory-bank/
+# Memory Bank (agent-memory) - contexto interno del instructor
+.memory-bank/
 
 # Configuración de MCP y herramientas de desarrollo
 .mcp.json
@@ -73,8 +73,6 @@ docs/
 # Archivos de configuración de Claude/AI
 .claude/
 
-# Notebooks antiguos o de prueba
-Clase1.2-Electiva-Analitica-IA.ipynb
 #ResumenChatbot-Clase1.ipynb
 
 # Archivos temporales
@@ -83,7 +81,6 @@ Clase1.2-Electiva-Analitica-IA.ipynb
 ~$*
 
 # Datasets grandes locales (los notebooks cargan desde URLs públicas)
-siniestros_viales_consolidados_bogota_dc.xlsx
 *.xlsx
 
 # Memory Bank working files (opcional)
@@ -104,9 +101,6 @@ results/
 # ========================================
 # INTERNAL FILES - NO COMPARTIR CON ESTUDIANTES
 # ========================================
-
-# Memory Bank completo - informacion interna del proyecto
-memory-bank/
 
 # Planes de implementacion y PRDs - documentos de planificacion interna
 .claude/
@@ -136,3 +130,7 @@ PROMPT_*.md
 *_temp.md
 *_draft.md
 *_borrador.md
+
+# cli-orchestration: cross-CLI coordination registry (runtime noise, auto-managed)
+.memory-bank/agent-sessions.md
+.memory-bank/topics/agent-sessions.md

@@ -57,7 +57,7 @@ Demostrar tu capacidad para realizar un análisis exploratorio completo de datos
 
 ## ✅ Rúbrica de Evaluación
 
-> **Nota:** Esta rúbrica unificada aplica a todas las opciones de Taller Final. Para más detalles, consulta [docs/sistema-evaluacion.md](docs/sistema-evaluacion.md).
+> **Nota:** Esta rúbrica unificada aplica a todas las opciones de Taller Final (A, B, C y D).
 
 ### Criterio 1: Conexión a API y Extracción de Datos (15%)
 

@@ -25,7 +25,7 @@ Contexto del negocio: [breve descripción de qué representan los datos]
 
 **Ejemplo de uso:**
 ```
-Tengo un DataFrame con 8,800 filas y estas columnas:
+Tengo un DataFrame con 6,234 filas y estas columnas:
 - title: nombre de la película
 - type: 'Movie' o 'TV Show'
 - release_year: año de lanzamiento
@@ -69,7 +69,7 @@ Por favor:
 3. Identifica las 5 clasificaciones más frecuentes
 4. Resume en 1 frase qué significa esto para la estrategia de contenido
 
-Dataset: Catálogo de Netflix con 8,800 títulos
+Dataset: Catálogo de Netflix con 6,234 títulos
 ```
 
 ---
@@ -324,7 +324,7 @@ Usa esta plantilla cuando presentes resultados a gerencia que TOMARÁN DECISIONE
 
 **To:** Directora de E-commerce
 **From:** Analista de Datos
-**Date:** Enero 2026
+**Date:** Septiembre 2026
 **Subject:** Expansión de Categoría de Joyería
 
 ---
@@ -402,7 +402,7 @@ Estas plantillas te ayudan a estructurar tus pensamientos y obtener mejores resu
 ---
 
 **Versión:** 2.0 (Actualizado 2026)
-**Fecha:** Enero 2026
+**Fecha:** Agosto 2026
 **Curso:** Electiva Analítica de Datos con IA
 
 **Novedades v2.0:**

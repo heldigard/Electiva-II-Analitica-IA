@@ -725,10 +725,11 @@ Métricas a revisar mensualmente:
 ### Chatbots de IA para Ayuda
 
 Si te quedas atascado, puedes usar:
-- **Qwen** (100% gratuito) - Recomendado
-- **ChatGPT** (GPT-4o mini)
-- **Google AI Studio** (Gemini)
-- **Claude**
+- **Qwen** (Qwen3.5, 100% gratuito) - Recomendado
+- ✨ **Gemini en Colab** (integrado en tu notebook, panel ✨)
+- **ChatGPT** (GPT-5.6)
+- **Claude** (Sonnet 5)
+- **Kimi** (K3, cuota gratuita generosa)
 - **Julius AI** (para análisis de datos conversacional)
 
 **Ejemplo de prompt:**

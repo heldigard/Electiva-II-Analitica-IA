@@ -32,14 +32,41 @@ Tu Criterio + Capacidad de Razonamiento + Herramientas de IA = Análisis Profesi
 
 ---
 
+## 📅 Calendario — Cohorte Agosto–Septiembre 2026
+
+Todas las sesiones son **virtuales**, de **6:00 a 9:15 p.m.**, con dos descansos de 15 minutos (bloques de 60 + 60 + 45 minutos).
+
+| Fecha | Sesión | Detalle |
+|-------|--------|---------|
+| **Lun 10-ago** | 📘 **Clase 1** | Fundamentos de LLMs, prompting, exploración de datos |
+| Lun 17-ago | 🇨🇴 **FESTIVO** | No hay clase |
+| **Lun 24-ago** | 📊 **Clase 2** | Visualización, insights, el LLM como guía del análisis |
+| Lun 31-ago | 🗓️ **HOLGURA** | *Política universidad:* espacio **solo para resolver dudas** — sin contenido nuevo ni evaluación |
+| **Lun 7-sep** | 🏆 **Clase 3** | APIs, Proyecto Integrador y Taller Final |
+| Dom 13-sep | 📤 **Entrega Taller Final** | Hasta las 11:59 p.m. por el portal |
+
+📹 **Clase Virtual pregrabada (APIs):** mírala a tu ritmo **entre el 24-ago y el 7-sep**.
+
+### ⏱️ Horario de cada sesión
+
+| Horario | Bloque |
+|---------|--------|
+| 6:00 – 7:00 p.m. | Bloque 1 (60 min) |
+| 7:00 – 7:15 p.m. | ☕ Descanso |
+| 7:15 – 8:15 p.m. | Bloque 2 (60 min) |
+| 8:15 – 8:30 p.m. | ☕ Descanso |
+| 8:30 – 9:15 p.m. | Bloque 3 (45 min) |
+
+---
+
 ## 📚 Estructura del Curso
 
 | Clase | Tema | Descripción |
 |:-----:|------|-------------|
-| **1** | 🚀 Fundamentos | Introducción a LLMs, técnicas de prompting y exploración inicial de datos |
-| **2** | 📊 Visualización | Análisis exploratorio, gráficos estadísticos e interpretación de insights |
-| **3** | 🏆 Proyecto Final | Integración completa: APIs, análisis y comunicación de resultados |
-| **Virtual** | 🌐 APIs | Clase pregrabada sobre conexión y consumo de APIs REST |
+| **1** (10-ago) | 🚀 Fundamentos | Panorama LLM 2026, Gemini en Colab, comparativa multi-LLM, prompting y exploración de datos |
+| **2** (24-ago) | 📊 Visualización | 5 gráficos esenciales, el LLM como guía del análisis, insights de negocio |
+| **3** (7-sep) | 🏆 Proyecto Final | Integración completa: APIs, análisis y comunicación de resultados |
+| **Virtual** | 🌐 APIs | Clase pregrabada sobre conexión y consumo de APIs REST (antes del 7-sep) |
 
 ---
 
@@ -50,7 +77,7 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
 <table align="center">
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/Clase1-Fundamentos-Prompting.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-II-Analitica-IA/blob/master/clases/Clase1-Fundamentos-Prompting.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/📘_CLASE_1-Fundamentos_y_Prompting-blue?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase 1"/>
       </a>
       <br><sub>Introducción a LLMs y técnicas de prompting</sub>
@@ -58,7 +85,7 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
   </tr>
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/Clase2-Analisis-Visualizacion.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-II-Analitica-IA/blob/master/clases/Clase2-Analisis-Visualizacion.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/📊_CLASE_2-Análisis_y_Visualización-green?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase 2"/>
       </a>
       <br><sub>EDA, gráficos y extracción de insights</sub>
@@ -66,7 +93,7 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
   </tr>
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/Clase3-Proyecto-Integrador.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-II-Analitica-IA/blob/master/clases/Clase3-Proyecto-Integrador.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/🏆_CLASE_3-Proyecto_Integrador-orange?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase 3"/>
       </a>
       <br><sub>Caso práctico completo de análisis</sub>
@@ -74,7 +101,7 @@ Haz clic en el botón correspondiente para abrir cada clase directamente en Goog
   </tr>
   <tr>
     <td align="center">
-      <a href="https://colab.research.google.com/github/heldigard/Electiva-Analitica-IA/blob/main/clases/ClaseVirtual-API.ipynb" target="_blank">
+      <a href="https://colab.research.google.com/github/heldigard/Electiva-II-Analitica-IA/blob/master/clases/ClaseVirtual-API.ipynb" target="_blank">
         <img src="https://img.shields.io/badge/🌐_VIRTUAL-APIs_REST-purple?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Clase Virtual"/>
       </a>
       <br><sub>Conexión y consumo de APIs (pregrabada)</sub>
@@ -101,17 +128,19 @@ El curso incluye documentos de referencia que te ayudarán durante y después de
 
 ## 🤖 Herramientas de IA Recomendadas
 
-Durante el curso utilizaremos diferentes chatbots de IA. **Todos tienen versiones gratuitas:**
+Durante el curso utilizaremos diferentes chatbots de IA. **Todos tienen versiones gratuitas** (modelos vigentes a agosto de 2026):
 
-| Herramienta | Acceso | Fortalezas | Enlace |
-|-------------|--------|------------|--------|
-| 🟢 **ChatGPT** | Gratis / Plus | Versátil, excelente para código Python | [chat.openai.com](https://chat.openai.com) |
-| 🔵 **Google AI Studio** | Gratis | Integración con Colab, multimodal | [aistudio.google.com](https://aistudio.google.com) |
-| 🟣 **Claude** | Gratis / Pro | Análisis profundo, razonamiento largo | [claude.ai](https://claude.ai) |
-| 🟡 **Qwen** | 100% Gratis | Sin límites, código de calidad | [chat.qwen.ai](https://chat.qwen.ai) |
-| ⚫ **Grok** | Gratis en X | Datos en tiempo real | [grok.x.ai](https://grok.x.ai) |
-| 🔴 **Kimi K2** | Gratis | Modelo MoE potente, 1T parámetros | [kimi.moonshot.cn](https://kimi.moonshot.cn) |
-| 🟠 **Julius AI** | Gratis / Pro | Análisis conversacional de datos, gráficos automáticos | [julius.ai](https://julius.ai) |
+| Herramienta | Modelo actual | Acceso | Fortalezas | Enlace |
+|-------------|---------------|--------|------------|--------|
+| ✨ **Gemini en Colab** | Gemini 3.x | Integrado gratis | Genera código **dentro del notebook**, explica errores, Data Science Agent | Panel ✨ en Colab |
+| 🟢 **ChatGPT** | GPT-5.6 | Gratis / Plus | Versátil, excelente para código Python, Study Mode | [chatgpt.com](https://chatgpt.com) |
+| 🟣 **Claude** | Sonnet 5 / Opus 5 | Gratis / Pro | Análisis profundo, razonamiento largo | [claude.ai](https://claude.ai) |
+| 🔴 **Kimi** | K3 | Gratis | Contexto gigante (1M tokens), agentes, open weights | [kimi.com](https://kimi.com) |
+| 🟡 **Qwen** | Qwen3.5 | 100% Gratis | Sin límites estrictos, código de calidad, open source | [chat.qwen.ai](https://chat.qwen.ai) |
+| ⚫ **Grok** | Grok 4 | Gratis en X | Datos en tiempo real | [grok.x.ai](https://grok.x.ai) |
+| 🟠 **Julius AI** | Especializado | Gratis / Pro | Análisis conversacional de datos, gráficos automáticos | [julius.ai](https://julius.ai) |
+
+> 🧭 **Filosofía del curso:** no existe "el mejor chatbot" — existe el mejor **para tu tarea de hoy**. Por eso practicarás con varios y aprenderás a comparar sus respuestas con criterio.
 
 ### ⚠️ Advertencia de Privacidad
 
@@ -173,9 +202,11 @@ Toda la evaluación se realiza **en clase**. No hay tareas para la casa (excepto
 
 | Componente | Peso | Momento | Descripción |
 |------------|------|---------|-------------|
-| 📝 **Actividad Calificable 1** | 20% | Clase 1 | Ejercicio de exploración de datos con Netflix |
-| 📝 **Actividad Calificable 2** | 20% | Clase 2 | Análisis de visualización y extracción de insights |
-| 🏆 **Taller Final** | 60% | Clase 3 | Proyecto integrador completo (ELIGE UNA OPCIÓN) |
+| 📝 **Actividad Calificable 1** | 20% | Clase 1 (10-ago) | Ejercicio de exploración de datos con Netflix |
+| 📝 **Actividad Calificable 2** | 20% | Clase 2 (24-ago) | Análisis de visualización y extracción de insights |
+| 🏆 **Taller Final** | 60% | Clase 3 (7-sep) → entrega 13-sep | Proyecto integrador completo (ELIGE UNA OPCIÓN) |
+
+> 🗓️ **Holgura (31-ago):** por política de la universidad, ese espacio es **únicamente para resolver dudas**. No hay contenido nuevo ni actividades calificables — aprovecha para llegar sin preguntas pendientes a la Clase 3.
 
 ### 📋 Detalle de Actividades Calificables
 
@@ -194,7 +225,8 @@ Toda la evaluación se realiza **en clase**. No hay tareas para la casa (excepto
 **Taller Final (Clase 3 - 60%):**
 - Proyecto completo de análisis de datos con API
 - Resumen ejecutivo obligatorio
-- Se trabaja durante la Clase 3 (tiempo dedicado: 90 min)
+- Se inicia en la Clase 3 (Bloque 3, 8:30–9:05 p.m. con acompañamiento) y se termina en casa
+- **Entrega:** domingo 13 de septiembre, 11:59 p.m. por el portal
 - **Entregable:** Notebook completo (.ipynb)
 
 ### 📋 Taller Final - Cuatro Opciones Disponibles
