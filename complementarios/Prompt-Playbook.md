@@ -340,7 +340,7 @@ Expandir Joyería de 2 a 8 productos en 6 meses.
 - **Qué:** Añadir 6 productos nuevos (2 medios, 2 premium, 2 accesorios)
 - **Por qué:** Mayor ticket promedio = mayor revenue por transacción
 - **Impacto:** Revenue adicional estimado de $5,000/mes (+25%)
-- **Timeline:** Enero - Junio 2026
+- **Timeline:** Sep 2026 – Feb 2027
 
 ### ⚠️ RISKS
 - **Baja demanda:** Media probabilidad, Alto impacto → Test con 4 productos inicial, monitorear conversión semanal
