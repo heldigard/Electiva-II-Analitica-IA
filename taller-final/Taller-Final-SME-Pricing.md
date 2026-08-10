@@ -96,8 +96,6 @@ fechas = pd.date_range('2024-01-01', '2025-12-31', freq='D')
 ventas_data = []
 for fecha in fechas:
     # Número de ventas por día (con estacionalidad)
-    n_ventas_dia = np.random.poisson(4)  # Promedio 4 ventas por día
-
     # Factor estacional (diciembre +40%, enero -30%)
     mes = fecha.month
     if mes == 12:
@@ -114,6 +112,10 @@ for fecha in fechas:
         factor_dia = 1.2
     else:
         factor_dia = 1.0
+
+    # Aplicar ambos factores a la tasa del proceso de Poisson
+    tasa_ventas_dia = 4 * factor_estacional * factor_dia
+    n_ventas_dia = np.random.poisson(tasa_ventas_dia)
 
     for _ in range(n_ventas_dia):
         # Elegir producto aleatorio
@@ -163,9 +165,9 @@ df['mes_nombre'] = df['fecha'].dt.month_name()
 df['dia_semana'] = df['fecha'].dt.day_name()
 df['trimestre'] = df['fecha'].dt.quarter
 
-# Guardar
-df.to_csv('datos/sme-ventas.csv', index=False)
-df_productos.to_csv('datos/sme-productos.csv', index=False)
+# Guardar en el directorio actual de Colab
+df.to_csv('sme-ventas.csv', index=False)
+df_productos.to_csv('sme-productos.csv', index=False)
 
 print(f"Dataset generado: {len(df):,} ventas")
 print(f"Período: {df['fecha'].min()} a {df['fecha'].max()}")
@@ -186,18 +188,16 @@ Si tienes acceso a datos reales de una PyME, úsalos. El dataset debe tener al m
 
 ### Opción C: Dataset de Respaldo (Backup)
 
-Si no puedes generar datos, usa los datasets de respaldo disponibles en:
-```
-datos/sme-ventas-backup.csv
-datos/sme-productos-backup.csv
-```
+Si no puedes generar datos, usa los datasets de respaldo públicos del repositorio.
 
 ```python
 # Cargar datasets de respaldo
 import pandas as pd
 
-df = pd.read_csv('datos/sme-ventas-backup.csv')
-df_productos = pd.read_csv('datos/sme-productos-backup.csv')
+ventas_url = 'https://raw.githubusercontent.com/heldigard/Electiva-II-Analitica-IA/master/datos/sme-ventas-backup.csv'
+productos_url = 'https://raw.githubusercontent.com/heldigard/Electiva-II-Analitica-IA/master/datos/sme-productos-backup.csv'
+df = pd.read_csv(ventas_url)
+df_productos = pd.read_csv(productos_url)
 
 print(f"Ventas cargadas: {len(df)} registros")
 print(f"Productos cargados: {len(df_productos)} productos")
@@ -215,9 +215,11 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Cargar datasets
-df_ventas = pd.read_csv('sme-ventas-backup.csv')
-df_productos = pd.read_csv('sme-productos-backup.csv')
+# Cargar backups reproducibles (o usa los CSV generados en la opción A)
+ventas_url = 'https://raw.githubusercontent.com/heldigard/Electiva-II-Analitica-IA/master/datos/sme-ventas-backup.csv'
+productos_url = 'https://raw.githubusercontent.com/heldigard/Electiva-II-Analitica-IA/master/datos/sme-productos-backup.csv'
+df_ventas = pd.read_csv(ventas_url)
+df_productos = pd.read_csv(productos_url)
 
 # Convertir fecha
 df_ventas['fecha'] = pd.to_datetime(df_ventas['fecha'])
@@ -710,13 +712,13 @@ Métricas a revisar mensualmente:
 
 | Criterio | Peso | Excelente (100%) | Bueno (75%) | Aceptable (50%) | Insuficiente (0%) |
 |----------|------|------------------|-------------|-----------------|-------------------|
-| **1. Carga y Limpieza** | 15% | Dataset generado/cargado, preparación completa | Dataset preparado adecuadamente | Preparación básica | No logra preparar datos |
-| **2. Análisis Visual** | 25% | 4+ gráficos con interpretación financiera detallada | 4 gráficos con interpretación aceptable | 3-4 gráficos con mínima interpretación | Menos de 3 gráficos |
-| **3. Preguntas de Negocio** | 30% | 4 preguntas respondidas con evidencia numérica e impacto financiero | 4 preguntas respondidas con evidencia | 3-4 preguntas respondidas | Menos de 3 preguntas |
-| **4. Recomendaciones Pricing** | 15% | 3 recomendaciones con impacto cuantificado y riesgo | 3 recomendaciones con formato adecuado | 2-3 recomendaciones básicas | Menos de 2 recomendaciones |
-| **5. Resumen Ejecutivo** | 15% | Resumen profesional con hallazgos + recomendaciones + proyección financiera | Resumen con hallazgos + recomendaciones | Resumen incompleto | Sin resumen ejecutivo |
+| **1. Carga y extracción** | 15% | Datasets generados o cargados desde fuentes reproducibles y validados | Datasets cargados y validados de forma básica | Datasets cargados con validación mínima | No logra cargar los datos |
+| **2. Limpieza y transformación** | 20% | Tipos, fechas, márgenes y variables derivadas tratados y justificados | Preparación adecuada con justificación parcial | Preparación básica con problemas menores | No realiza preparación significativa |
+| **3. Análisis y visualización** | 20% | 4+ gráficos con interpretación financiera detallada | 4 gráficos con interpretación aceptable | 3-4 gráficos con interpretación mínima | Menos de 3 gráficos |
+| **4. Respuestas de negocio** | 25% | Preguntas respondidas y recomendaciones de pricing con evidencia, impacto cuantificado y riesgo | Respuestas y recomendaciones con evidencia adecuada | Respuestas o recomendaciones parciales | Menos de 3 respuestas o sin recomendaciones |
+| **5. Resumen Ejecutivo** | 20% | Resumen profesional con hallazgos + recomendaciones + proyección financiera | Resumen con hallazgos + recomendaciones | Resumen incompleto | Sin resumen ejecutivo |
 
-**Bonus (+10%):** Incluye cálculo de elasticidad de precio (cuánto cambia la demanda con cada 1% de cambio en precio)
+**Bonus (hasta +10 puntos, sin superar 100):** Incluye cálculo de elasticidad de precio (cuánto cambia la demanda con cada 1% de cambio en precio).
 
 ---
 
@@ -725,7 +727,7 @@ Métricas a revisar mensualmente:
 ### Chatbots de IA para Ayuda
 
 Si te quedas atascado, puedes usar:
-- **Qwen** (Qwen3.5, 100% gratuito) - Recomendado
+- **Qwen** (Qwen 3.8; acceso según plan y región)
 - ✨ **Gemini en Colab** (integrado en tu notebook, panel ✨)
 - **ChatGPT** (GPT-5.6)
 - **Claude** (Sonnet 5)

@@ -128,23 +128,23 @@ El curso incluye documentos de referencia que te ayudarán durante y después de
 
 ## 🤖 Herramientas de IA Recomendadas
 
-Durante el curso utilizaremos diferentes chatbots de IA. **Todos tienen versiones gratuitas** (modelos vigentes a agosto de 2026):
+Durante el curso puedes utilizar distintos chatbots de IA. La disponibilidad, las cuotas y los modelos dependen del plan, la región y la cuenta (referencias revisadas en agosto de 2026):
 
 | Herramienta | Modelo actual | Acceso | Fortalezas | Enlace |
 |-------------|---------------|--------|------------|--------|
-| ✨ **Gemini en Colab** | Gemini 3.x | Integrado gratis | Genera código **dentro del notebook**, explica errores, Data Science Agent | Panel ✨ en Colab |
-| 🟢 **ChatGPT** | GPT-5.6 | Gratis / Plus | Versátil, excelente para código Python, Study Mode | [chatgpt.com](https://chatgpt.com) |
-| 🟣 **Claude** | Sonnet 5 / Opus 5 | Gratis / Pro | Análisis profundo, razonamiento largo | [claude.ai](https://claude.ai) |
-| 🔴 **Kimi** | K3 | Gratis | Contexto gigante (1M tokens), agentes, open weights | [kimi.com](https://kimi.com) |
-| 🟡 **Qwen** | Qwen3.5 | 100% Gratis | Sin límites estrictos, código de calidad, open source | [chat.qwen.ai](https://chat.qwen.ai) |
-| ⚫ **Grok** | Grok 4 | Gratis en X | Datos en tiempo real | [grok.x.ai](https://grok.x.ai) |
+| ✨ **Gemini en Colab** | Modelo habilitado en tu cuenta | Funciones variables | Genera o explica código dentro del entorno, si el panel está disponible | Panel de IA en Colab |
+| 🟢 **ChatGPT** | GPT-5.6 | Según plan y región | Código Python, explicaciones y Study Mode | [chatgpt.com](https://chatgpt.com) |
+| 🟣 **Claude** | Sonnet 5 / Opus 5 | Según plan y región | Análisis profundo y documentos largos | [claude.ai](https://claude.ai) |
+| 🔴 **Kimi** | K3 | Según plan y región | Contexto largo y tareas con agentes | [kimi.com](https://kimi.com) |
+| 🟡 **Qwen** | Qwen 3.8 | Según plan y región | Código, documentos y modelos abiertos | [chat.qwen.ai](https://chat.qwen.ai) |
+| ⚫ **Grok** | Versión vigente | Según plan y región | Consulta de información reciente | [grok.com](https://grok.com) |
 | 🟠 **Julius AI** | Especializado | Gratis / Pro | Análisis conversacional de datos, gráficos automáticos | [julius.ai](https://julius.ai) |
 
 > 🧭 **Filosofía del curso:** no existe "el mejor chatbot" — existe el mejor **para tu tarea de hoy**. Por eso practicarás con varios y aprenderás a comparar sus respuestas con criterio.
 
 ### ⚠️ Advertencia de Privacidad
 
-> **IMPORTANTE:** Las versiones gratuitas de estos chatbots **pueden usar tus datos para entrenar sus modelos**. 
+> **IMPORTANTE:** El tratamiento de datos cambia según producto, plan y configuración. **No asumas que un chatbot público es confidencial.**
 > 
 > 🔒 **Antes de pegar datos en cualquier chatbot:**
 > 1. Elimina información personal (nombres, cédulas, teléfonos)
@@ -191,14 +191,14 @@ El curso sigue una metodología estructurada para trabajar con IA:
 | Dataset | Fuente | Uso en Clase |
 |---------|--------|--------------|
 | Netflix Movies & TV Shows | Kaggle | Clase 1 y 2 |
-| Retail Sales Dataset | Kaggle | Clase 2 |
+| Ventas mensuales simuladas | Incluido en el notebook | Clase 2 |
 | Fake Store API | API REST | Clase 3 y Taller Final |
 
 ---
 
 ## ✅ Evaluación
 
-Toda la evaluación se realiza **en clase**. No hay tareas para la casa (excepto el Taller Final que se puede trabajar en la Clase 3).
+Las dos actividades cortas se realizan **en clase**. El Taller Final se inicia con acompañamiento en la Clase 3 y se termina en casa antes de la fecha de entrega.
 
 | Componente | Peso | Momento | Descripción |
 |------------|------|---------|-------------|
@@ -212,15 +212,16 @@ Toda la evaluación se realiza **en clase**. No hay tareas para la casa (excepto
 
 **Actividad 1 (Clase 1 - 20%):**
 - Ejercicio guiado de exploración del dataset Netflix
-- Demostrar uso de `.head()`, `.info()`, `.describe()`
-- Identificar valores faltantes y proponer soluciones
-- **Entregable:** Celda de código ejecutada + interpretación escrita
+- Interpretar una salida de `.head()`, `.info()` o `.describe()`
+- Identificar un problema de datos y justificar cómo tratarlo
+- Responder una pregunta con código generado mediante un prompt claro
+- **Entregable:** 3 evidencias: exploración, decisión de calidad y respuesta analítica interpretada
 
 **Actividad 2 (Clase 2 - 20%):**
-- Crear 2 visualizaciones con interpretación de negocio
+- Crear 1 visualización con interpretación de negocio (un segundo gráfico es ampliación opcional)
 - Aplicar el framework Insight vs. Observación
 - Usar el Decision Flow de gráficos correctamente
-- **Entregable:** 2 gráficos + párrafo de insight por cada uno
+- **Entregable:** 1 gráfico + justificación de la elección + párrafo de insight verificable
 
 **Taller Final (Clase 3 - 60%):**
 - Proyecto completo de análisis de datos con API
@@ -249,7 +250,7 @@ El curso ofrece **CUATRO proyectos finales** para que escojas según tus interes
 #### 📄 Opción B: City Bikes (Operaciones/Logística)
 - **Archivo:** [`taller-final/Taller-Final-CityBikes.md`](taller-final/Taller-Final-CityBikes.md)
 - **Para quién:** Estudiantes interesados en operaciones, logística, servicio público, movilidad urbana
-- **Habilidades:** Análisis temporal, patrones geográficos, disponibilidad en tiempo real
+- **Habilidades:** Análisis espacial e instantáneo, patrones geográficos y límites de una captura sin historia temporal
 - **Tipo de análisis:** Operativo (decisiones de redistribución y reabastecimiento)
 
 #### 📄 Opción C: Customer Support Intelligence (NUEVO - 2026)

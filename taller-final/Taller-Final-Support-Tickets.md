@@ -86,9 +86,7 @@ df = pd.DataFrame({
     'estado': np.random.choice(estados, n_tickets, p=[0.10, 0.20, 0.40, 0.30]),
     'cliente_id': np.random.randint(1, 200, n_tickets),
     'satisfaccion': np.random.choice([1, 2, 3, 4, 5], n_tickets, p=[0.05, 0.10, 0.25, 0.35, 0.25]),
-    'fecha_creacion': pd.date_range('2025-07-01', periods=n_tickets, freq='1h'),
-    'hora_creacion': np.random.randint(0, 24, n_tickets),
-    'dia_semana': np.random.randint(0, 7, n_tickets)
+    'fecha_creacion': pd.date_range('2025-07-01', periods=n_tickets, freq='1h')
 })
 
 # Calcular tiempo de resolución (en horas)
@@ -106,14 +104,16 @@ df.loc[mask_bug_critical, 'tiempo_resolucion_horas'] = np.random.uniform(48, 168
 
 # Añadir correlación: billing tickets tienen menor satisfacción
 df.loc[df['categoria'] == 'Billing/Payment', 'satisfaccion'] = df.loc[
-    df['categoria'] == 'Billing/Payment', 'satisfacción'
+    df['categoria'] == 'Billing/Payment', 'satisfaccion'
 ].apply(lambda x: min(x, 3))
 
-# Añadir columna mes
+# Derivar las variables temporales desde la fecha, no generarlas de forma independiente
+df['hora_creacion'] = df['fecha_creacion'].dt.hour
+df['dia_semana'] = df['fecha_creacion'].dt.day_name()
 df['mes'] = df['fecha_creacion'].dt.month_name()
 
-# Guardar
-df.to_csv('datos/support-tickets.csv', index=False)
+# Guardar en el directorio actual de Colab
+df.to_csv('support-tickets.csv', index=False)
 print(f"Dataset generado: {len(df)} tickets")
 print(df.head())
 ```
@@ -128,16 +128,14 @@ Si tienes acceso a datos reales de tickets de soporte (anónimos), úsalos. Aseg
 
 ### Opción C: Dataset de Respaldo (Backup)
 
-Si no puedes generar datos, usa el dataset de respaldo disponible en:
-```
-datos/support-tickets-backup.csv
-```
+Si no puedes generar datos, usa el dataset de respaldo público del repositorio.
 
 ```python
 # Cargar dataset de respaldo
 import pandas as pd
 
-df = pd.read_csv('datos/support-tickets-backup.csv')
+backup_url = 'https://raw.githubusercontent.com/heldigard/Electiva-II-Analitica-IA/master/datos/support-tickets-backup.csv'
+df = pd.read_csv(backup_url)
 print(f"Dataset cargado: {len(df)} tickets")
 print(df.head())
 ```
@@ -153,8 +151,9 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-# Cargar dataset
-df = pd.read_csv('support-tickets-backup.csv')
+# Cargar el backup reproducible (o usa `support-tickets.csv` si ejecutaste el generador)
+backup_url = 'https://raw.githubusercontent.com/heldigard/Electiva-II-Analitica-IA/master/datos/support-tickets-backup.csv'
+df = pd.read_csv(backup_url)
 
 # Exploración inicial
 print("Dataset shape:", df.shape)
@@ -189,6 +188,7 @@ df['es_resuelto'] = df['tiempo_resolucion_horas'].notna().astype(int)
 # Convertir columnas de fecha si existen
 if 'fecha_creacion' in df.columns:
     df['fecha_creacion'] = pd.to_datetime(df['fecha_creacion'])
+    df['hora_creacion'] = df['fecha_creacion'].dt.hour
     df['dia_semana'] = df['fecha_creacion'].dt.day_name()
     df['mes'] = df['fecha_creacion'].dt.month_name()
 
@@ -517,13 +517,13 @@ Para evaluar el éxito de estas recomendaciones, monitorear mensualmente:
 
 | Criterio | Peso | Excelente (100%) | Bueno (75%) | Aceptable (50%) | Insuficiente (0%) |
 |----------|------|------------------|-------------|-----------------|-------------------|
-| **1. Carga y Limpieza** | 15% | Dataset cargado, limpieza exhaustiva, validaciones completas | Dataset cargado, limpieza adecuada | Dataset cargado, limpieza básica | No logra cargar dataset |
-| **2. Análisis Visual** | 25% | 4+ gráficos con títulos, interpretación detallada, insights de negocio | 4 gráficos con interpretación aceptable | 3-4 gráficos con mínima interpretación | Menos de 3 gráficos o sin interpretación |
-| **3. Preguntas de Negocio** | 30% | 4 preguntas respondidas con evidencia numérica clara e insights profundos | 4 preguntas respondidas con evidencia adecuada | 3-4 preguntas respondidas con evidencia básica | Menos de 3 preguntas o sin evidencia |
-| **4. Recomendaciones Roadmap** | 15% | 3 recomendaciones priorizadas con evidencia, impacto, esfuerzo, timeline | 3 recomendaciones con formato adecuado | 2-3 recomendaciones básicas | Menos de 2 recomendaciones |
-| **5. Resumen Ejecutivo** | 15% | Resumen profesional con 3 hallazgos + 3 recomendaciones + métricas de seguimiento | Resumen con 3 hallazgos + 3 recomendaciones | Resumen incompleto | Sin resumen ejecutivo |
+| **1. Carga y extracción** | 15% | Dataset cargado desde una fuente reproducible y validado | Dataset cargado y validado de forma básica | Dataset cargado con validación mínima | No logra cargar el dataset |
+| **2. Limpieza y transformación** | 20% | Faltantes, tipos, fechas y variables derivadas tratados y justificados | Limpieza adecuada con justificación parcial | Limpieza básica con problemas menores | No realiza limpieza significativa |
+| **3. Análisis y visualización** | 20% | 4+ gráficos con títulos, interpretación detallada e insights de negocio | 4 gráficos con interpretación aceptable | 3-4 gráficos con interpretación mínima | Menos de 3 gráficos o sin interpretación |
+| **4. Respuestas de negocio** | 25% | Preguntas respondidas y recomendaciones priorizadas con evidencia, impacto, esfuerzo y plazo | Respuestas y recomendaciones con evidencia adecuada | Respuestas o recomendaciones parciales | Menos de 3 respuestas o sin recomendaciones |
+| **5. Resumen Ejecutivo** | 20% | Resumen profesional con 3 hallazgos + 3 recomendaciones + métricas de seguimiento | Resumen con 3 hallazgos + 3 recomendaciones | Resumen incompleto | Sin resumen ejecutivo |
 
-**Bonus (+10%):** Uno de los gráficos es un "gráfico narrativo" con anotaciones, headline y call-to-action
+**Bonus (hasta +10 puntos, sin superar 100):** Uno de los gráficos es un "gráfico narrativo" con anotaciones, headline y call-to-action.
 
 ---
 
@@ -532,7 +532,7 @@ Para evaluar el éxito de estas recomendaciones, monitorear mensualmente:
 ### Chatbots de IA para Ayuda
 
 Si te quedas atascado, puedes usar:
-- **Qwen** (Qwen3.5, 100% gratuito) - Recomendado
+- **Qwen** (Qwen 3.8; acceso según plan y región)
 - ✨ **Gemini en Colab** (integrado en tu notebook, panel ✨)
 - **ChatGPT** (GPT-5.6)
 - **Claude** (Sonnet 5)

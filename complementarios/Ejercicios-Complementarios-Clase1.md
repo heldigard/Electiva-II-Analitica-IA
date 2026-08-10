@@ -100,9 +100,9 @@ TV Show    1969   # 32% del catálogo
 
 **Resultado esperado:**
 ```
-2019: 2,349 títulos  # año pico de adiciones
-2018: 1,782
-2017: 1,300
+2019: 2,057 títulos  # año pico de adiciones
+2018: 1,629
+2017: 1,184
 ...
 ```
 

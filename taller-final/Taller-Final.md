@@ -9,7 +9,7 @@
 
 | Aspecto | Detalle |
 |---------|---------|
-| **Duración** | Realizado completamente en clase |
+| **Duración** | Se inicia en clase y se termina en casa hasta la fecha definida en el curso |
 | **Modalidad** | Individual/Grupal (máx. 3 personas) |
 | **Entregable** | Notebook de Google Colab (.ipynb) |
 | **Peso** | 60% de la nota final |
@@ -126,7 +126,7 @@ Debe separarse en:
 3. **Gráfico de barras** - Precio promedio por categoría
 4. **Scatter plot** - Relación precio vs calificación
 
-**Bonus:** Crear una métrica `score = rating_rate × rating_count` y visualizar los productos estrella.
+**Bonus (hasta +10 puntos, sin superar 100):** Crear una métrica `score = rating_rate × rating_count` y visualizar los productos estrella.
 
 ---
 

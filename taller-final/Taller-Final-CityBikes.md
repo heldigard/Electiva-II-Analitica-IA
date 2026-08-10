@@ -48,7 +48,7 @@ Al completar este taller, serás capaz de:
 |-----------|-----------------------|
 | **Conexión a APIs** | Realizar petición GET a CityBikes API |
 | **Limpieza de Datos Complejos** | Manejar JSON anidado, timestamps, coordenadas geográficas |
-| **Análisis Temporal** | Identificar patrones por hora del día y día de la semana |
+| **Análisis temporal (opcional)** | Analizar patrones por hora y día solo con observaciones históricas |
 | **Análisis Geográfico** | Usar latitud/longitud para análisis espacial |
 | **Visualización de Datos** | Crear 4+ gráficos con insights claros |
 | **Comunicación de Negocio** | Escribir resumen ejecutivo con recomendaciones accionables |
@@ -68,15 +68,14 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Conectar a CityBikes API
-url = "https://api.citybikes.es/v2/networks"
-response = requests.get(url)
-
-# Verificar que la conexión fue exitosa
-if response.status_code == 200:
+url = "https://api.citybik.es/v2/networks"
+try:
+    response = requests.get(url, timeout=20)
+    response.raise_for_status()
     print("✅ Conexión exitosa a CityBikes API")
     data = response.json()
-else:
-    print(f"❌ Error en la conexión: {response.status_code}")
+except requests.RequestException as error:
+    raise RuntimeError(f"❌ Error en la conexión: {error}") from error
 ```
 
 **🎯 Objetivo:** Obtener un código de estado 200 y los datos JSON de la API.
@@ -90,20 +89,20 @@ Explora la estructura de los datos para entender qué información está disponi
 ```python
 # Ver la estructura de los datos
 print("Claves principales:", list(data.keys()))
-print("Redes disponibles:", len(data['networks']['networks']))
+print("Redes disponibles:", len(data['networks']))
 
 # Elegir una red específica (ejemplo: ciudad de tu interés)
 # Para este taller, usaremos una red específica
 network_name = "bicing"  # Barcelona, o elija otra ciudad
-network_url = f"https://api.citybikes.es/v2/networks/{network_name}"
-network_response = requests.get(network_url)
-
-if network_response.status_code == 200:
+network_url = f"https://api.citybik.es/v2/networks/{network_name}"
+try:
+    network_response = requests.get(network_url, timeout=20)
+    network_response.raise_for_status()
     network_data = network_response.json()
     stations = network_data['network']['stations']
     print(f"✅ Datos obtenidos: {len(stations)} estaciones")
-else:
-    print(f"❌ Error obteniendo red: {network_response.status_code}")
+except requests.RequestException as error:
+    raise RuntimeError(f"❌ Error obteniendo red: {error}") from error
 ```
 
 **Exploración inicial:**
@@ -146,11 +145,6 @@ df_limpio = df_limpio.dropna(subset=['free_bikes', 'empty_slots'])
 # Convertir timestamp a datetime
 df_limpio['timestamp'] = pd.to_datetime(df_limpio['timestamp'])
 
-# Crear columnas adicionales para análisis temporal
-df_limpio['hora'] = df_limpio['timestamp'].dt.hour
-df_limpio['dia_semana'] = df_limpio['timestamp'].dt.dayofweek
-df_limpio['dia_nombre'] = df_limpio['timestamp'].dt.day_name()
-
 # Crear métrica de disponibilidad
 df_limpio['total_slots'] = df_limpio['free_bikes'] + df_limpio['empty_slots']
 df_limpio['tasa_disponibilidad'] = df_limpio['free_bikes'] / df_limpio['total_slots']
@@ -162,7 +156,9 @@ print(f"- Columnas: {list(df_limpio.columns)}")
 display(df_limpio.head())
 ```
 
-**🎯 Objetivo:** Dataset limpio sin valores faltantes, con columnas adicionales para análisis temporal.
+**🎯 Objetivo:** Dataset limpio sin valores faltantes, listo para análisis espacial e instantáneo.
+
+> **Límite de la fuente:** una consulta a la API es una captura única. Permite analizar la disponibilidad por estación y ubicación en ese instante, pero no inferir patrones por hora ni por día. Para análisis temporal, guarda varias capturas con su timestamp o usa un archivo histórico.
 
 ---
 
@@ -196,59 +192,43 @@ for _, row in top_10_bajas.iterrows():
 
 ---
 
-#### Visualización 2: Distribución de Disponibilidad por Hora
+#### Visualización 2: Distribución de Disponibilidad por Estación
 
 ```python
-# Agrupar por hora del día
-por_hora = df_limpio.groupby('hora').agg({
-    'free_bikes': 'mean',
-    'total_slots': 'mean',
-    'tasa_disponibilidad': 'mean'
-}).reset_index()
+disponibilidad = df_limpio['tasa_disponibilidad']
 
 plt.figure(figsize=(12, 6))
-plt.plot(por_hora['hora'], por_hora['tasa_disponibilidad'],
-         marker='o', linewidth=2, markersize=8, color='steelblue')
-plt.title('📈 Tasa de Disponibilidad de Bicicletas por Hora del Día')
-plt.xlabel('Hora del Día')
-plt.ylabel('Tasa de Disponibilidad Promedio')
-plt.xticks(range(0, 24))
+plt.hist(disponibilidad, bins=15, color='steelblue', edgecolor='white')
+plt.title('📈 Distribución de Disponibilidad entre Estaciones')
+plt.xlabel('Tasa de Disponibilidad')
+plt.ylabel('Número de Estaciones')
 plt.grid(True, alpha=0.3)
-plt.axvspan(7, 9, alpha=0.2, color='red', label='Hora pico mañana')
-plt.axvspan(17, 19, alpha=0.2, color='red', label='Hora pico tarde')
-plt.legend()
 plt.tight_layout()
 plt.show()
 ```
 
 **¿Qué significa esto para el negocio?**
-- Identifica horas críticas de demanda
-- Permite programar reabastecimiento preventivo
+- Identifica qué proporción de estaciones está en condición crítica en la captura
+- Ayuda a priorizar una respuesta operativa inmediata
 
 ---
 
-#### Visualización 3: Heatmap de Disponibilidad (Día x Hora)
+#### Visualización 3: Disponibilidad vs. Capacidad de la Estación
 
 ```python
-# Crear matriz de datos para heatmap
-heatmap_data = df_limpio.groupby(['dia_semana', 'hora'])['tasa_disponibilidad'].mean().unstack()
-
-# Etiquetas de días
-dias = ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo']
-heatmap_data.index = heatmap_data.index.map(lambda x: dias[x])
-
-plt.figure(figsize=(14, 8))
-sns.heatmap(heatmap_data, cmap='RdYlGn', annot=False, cbar_kws={'label': 'Tasa de Disponibilidad'})
-plt.title('🔥 Heatmap de Disponibilidad (Día de Semana x Hora del Día)')
-plt.xlabel('Hora del Día')
-plt.ylabel('Día de la Semana')
+plt.figure(figsize=(12, 6))
+plt.scatter(df_limpio['total_slots'], df_limpio['tasa_disponibilidad'], alpha=0.7, color='teal')
+plt.title('🔥 Disponibilidad según Capacidad de la Estación')
+plt.xlabel('Capacidad total (bicicletas + espacios vacíos)')
+plt.ylabel('Tasa de Disponibilidad')
+plt.grid(True, alpha=0.3)
 plt.tight_layout()
 plt.show()
 ```
 
 **¿Qué significa esto para el negocio?**
-- Muestra patrones semanales completos
-- Identifica momentos de mayor estrés del sistema
+- Permite detectar si las estaciones de mayor capacidad también presentan desbalance
+- Complementa el mapa para priorizar intervenciones por capacidad y ubicación
 
 ---
 
@@ -320,28 +300,26 @@ Top 5 Estaciones con MENOR disponibilidad:
 
 ---
 
-#### Pregunta 2: Patrones Temporales
+#### Pregunta 2: Alcance temporal de los datos
 
-> **¿Qué horas del día y días de la semana muestran mayor desbalance?**
+> **¿Qué conclusión temporal es válida con esta captura y qué datos adicionales se requieren?**
 
 **Tu respuesta:**
 ```
-Horas críticas:
-- La hora con MENOR disponibilidad: [hora:00] con XX% promedio
-- La hora con MAYOR disponibilidad: [hora:00] con XX% promedio
+Conclusión: Esta captura solo describe el estado de las estaciones en [timestamp].
 
-Días críticos:
-- El día con MENOR disponibilidad: [nombre del día] con XX% promedio
-- El día con MAYOR disponibilidad: [nombre del día] con XX% promedio
+Para analizar horas y días se requiere:
+1. Capturar las estaciones repetidamente durante varias semanas, conservando el timestamp.
+2. O usar un dataset histórico con una fila por estación y momento de observación.
 
-**INSIGHT:** [Qué significa esto para programar reabastecimiento?]
+**INSIGHT:** [Qué decisión inmediata permite la captura y qué análisis queda pendiente?]
 ```
 
 ---
 
 #### Pregunta 3: Análisis Geográfico
 
-> **¿Hay clusters geográficos con problemas persistentes de disponibilidad?**
+> **¿Hay clusters geográficos con baja disponibilidad en esta captura?**
 
 **Tu respuesta:**
 ```
@@ -467,11 +445,11 @@ Para evaluar el éxito de estas recomendaciones, monitorear:
 |----------|------|------------------|-------------|-----------------|-------------------|
 | **1. Conexión API** | 15% | Conexión exitosa, manejo robusto de errores, parseo correcto de JSON | Conexión exitosa, mínimo manejo de errores | Conexión exitosa sin manejo de errores | No logra conectar a la API |
 | **2. Limpieza de Datos** | 20% | Limpieza exhaustiva: NaN, duplicados, tipos, campos anidados, timestamps | Limpieza adecuada con manejo básico de problemas | Limpieza mínima con algunos problemas sin resolver | No realiza limpieza significativa |
-| **3. Análisis Visual** | 25% | 4+ gráficos con títulos, etiquetas, interpretación detallada, insight de negocio | 4 gráficos con títulos básicos e interpretación aceptable | 3-4 gráficos con mínima interpretación | Menos de 3 gráficos o sin interpretación |
+| **3. Análisis Visual** | 20% | 4+ gráficos con títulos, etiquetas, interpretación detallada, insight de negocio | 4 gráficos con títulos básicos e interpretación aceptable | 3-4 gráficos con mínima interpretación | Menos de 3 gráficos o sin interpretación |
 | **4. Respuestas de Negocio** | 25% | 5 preguntas respondidas con evidencia numérica clara e insights profundos | 4-5 preguntas respondidas con evidencia adecuada | 3-4 preguntas respondidas con evidencia básica | Menos de 3 preguntas o sin evidencia |
-| **5. Resumen Ejecutivo** | 15% | 3 hallazgos + 2 recomendaciones con evidencia, impacto, timeline; formato profesional | 3 hallazgos + 2 recomendaciones con formato adecuado | 2-3 hallazgos + 1-2 recomendaciones básicas | Menos de 2 hallazgos o sin recomendaciones |
+| **5. Resumen Ejecutivo** | 20% | 3 hallazgos + 2 recomendaciones con evidencia, impacto, timeline; formato profesional | 3 hallazgos + 2 recomendaciones con formato adecuado | 2-3 hallazgos + 1-2 recomendaciones básicas | Menos de 2 hallazgos o sin recomendaciones |
 
-**Bonus (+10%):** Uno de los gráficos es un "gráfico narrativo" con anotaciones, headline y call-to-action
+**Bonus (hasta +10 puntos, sin superar 100):** Uno de los gráficos es un "gráfico narrativo" con anotaciones, headline y call-to-action.
 
 ---
 
@@ -479,14 +457,13 @@ Para evaluar el éxito de estas recomendaciones, monitorear:
 
 ### APIs y Documentación
 
-- **CityBikes API:** https://api.citybikes.es/v2/
-- **Documentación:** http://api.citybikes.es/v2/
-- **Lista de redes:** https://api.citybikes.es/v2/networks
+- **CityBikes API:** https://api.citybik.es/v2/
+- **Lista de redes:** https://api.citybik.es/v2/networks
 
 ### Chatbots de IA para Ayuda
 
 Si te quedas atascado, puedes usar:
-- **Qwen** (Qwen3.5, 100% gratuito) - Recomendado
+- **Qwen** (Qwen 3.8; acceso según plan y región)
 - ✨ **Gemini en Colab** (integrado en tu notebook, panel ✨)
 - **ChatGPT** (GPT-5.6)
 - **Claude** (Sonnet 5)
@@ -502,7 +479,7 @@ Quiero crear un gráfico que muestre las estaciones con menor disponibilidad.
 
 ### Código de Referencia
 
-> **BACKUP DISPONIBLE:** Si la API falla durante clase, hay un dataset de respaldo disponible en `datos/citybikes-backup.csv` con 100 estaciones de muestra.
+> **BACKUP DISPONIBLE:** Si la API falla, usa el CSV público del repositorio con 100 estaciones de muestra.
 
 Si la API falla, puedes usar este dataset de respaldo:
 
@@ -510,7 +487,8 @@ Si la API falla, puedes usar este dataset de respaldo:
 # Opción 1: Cargar el backup CSV
 import pandas as pd
 
-df = pd.read_csv('datos/citybikes-backup.csv')
+backup_url = 'https://raw.githubusercontent.com/heldigard/Electiva-II-Analitica-IA/master/datos/citybikes-backup.csv'
+df = pd.read_csv(backup_url)
 print(f"Dataset de respaldo cargado: {len(df)} estaciones")
 
 # Opción 2: Generar datos simulados
@@ -547,7 +525,7 @@ df = pd.DataFrame({
 2. **Describir en lugar de analizar:** "El gráfico muestra barras rojas" no es un insight
 3. **Olvidar el contexto de negocio:** Tu audiencia es el Director de Operaciones, no un técnico
 4. **Ignorar valores faltantes:** Siempre verifica NaN y outliers antes de analizar
-5. **Quedarse atascado太久:** Si no puedes resolver un problema en 10 minutos, pide ayuda al instructor
+5. **Quedarse atascado demasiado tiempo:** Si no puedes resolver un problema en 10 minutos, pide ayuda al instructor
 
 ---
 

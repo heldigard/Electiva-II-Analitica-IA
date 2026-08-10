@@ -15,18 +15,15 @@ Esta guía te enseña **qué datos puedes y NO puedes compartir** con herramient
 
 > **"NUNCA compartas datos sensibles en chatbots gratuitos"**
 >
-> Las versiones gratuitas de chatbots generalmente **usan tus datos para entrenar**. Lo que pegues puede ser visto por otros usuarios en el futuro.
+> El tratamiento de datos depende del producto, el plan y la configuración. No asumas confidencialidad: lo que pegues puede almacenarse o revisarse según los términos vigentes del proveedor.
 
 ---
 
-## La Regla del 80/20
+## Clasifica antes de compartir
 
-```
-80% de los datos que necesitas analizar son COMPARTIBLES
-20% de los datos son SENSIBLES y requieren protección
-```
+No existe un porcentaje universal de datos "seguros". Revisa **cada campo** y clasifica el conjunto según su elemento más sensible: público, interno, confidencial o restringido.
 
-Tu trabajo es identificar el 20% y protegerlo.
+Tu trabajo es minimizar los datos, anonimizar cuando corresponda y usar únicamente herramientas autorizadas para esa clasificación.
 
 ---
 
