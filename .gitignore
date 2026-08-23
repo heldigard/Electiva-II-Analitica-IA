@@ -134,3 +134,9 @@ PROMPT_*.md
 # cli-orchestration: cross-CLI coordination registry (runtime noise, auto-managed)
 .memory-bank/agent-sessions.md
 .memory-bank/topics/agent-sessions.md
+
+# CSV generados al ejecutar los talleres (los notebooks los recrean; los respaldos viven en datos/)
+/sme-ventas.csv
+/sme-productos.csv
+/support-tickets.csv
+/citybikes.csv
