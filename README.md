@@ -190,9 +190,14 @@ El curso sigue una metodología estructurada para trabajar con IA:
 
 | Dataset | Fuente | Uso en Clase |
 |---------|--------|--------------|
-| Netflix Movies & TV Shows | Kaggle | Clase 1 y 2 |
-| Ventas mensuales simuladas | Incluido en el notebook | Clase 2 |
-| Fake Store API | API REST | Clase 3 y Taller Final |
+| Netflix Movies & TV Shows (6.234 títulos, 1925–2020) | Kaggle, leído desde un mirror en GitHub | Clase 1 y 2 |
+| Ventas mensuales simuladas | Generado dentro del notebook | Clase 2 |
+| CountriesNow API (histórico de población, corte 2018) | API REST pública, sin clave | Clase Virtual |
+| Fake Store API (20 productos) | API REST pública, sin clave | Clase 3 y Taller Final (Opción A) |
+| Respaldos CSV (`datos/*.csv`) | Copia local por si una API falla | Talleres B, C y D |
+
+> ⚠️ **Vigencia:** los datasets y las APIs públicas cambian. Cualquier cifra citada en los notebooks
+> debe **recalcularse al ejecutar**; si tu salida difiere del ejemplo, el número válido es el tuyo.
 
 ---
 
