@@ -232,7 +232,7 @@ Si el promedio te dice algo del negocio → es número.
 
 ### **Error #1: Confundir `=` con `==`**
 
-```python
+```text
 ❌ INCORRECTO:
 df[df['type'] = 'Movie']  # Esto es asignación, no comparación
 
@@ -246,7 +246,7 @@ df[df['type'] == 'Movie']  # Esto es comparación
 
 ### **Error #2: Olvidar el argumento `inplace=True`**
 
-```python
+```text
 ❌ INCORRECTO:
 df.drop(columns=['description'])  # No modifica el DataFrame original
 
@@ -263,7 +263,7 @@ df = df.drop(columns=['description'])  # Reasigna el resultado
 
 ### **Error #3: No verificar el resultado de la IA**
 
-```python
+```text
 ❌ RIESGOSO:
 # Pedir "el promedio de duración de las películas" y ejecutar sin revisar
 df['duration'].mean()  # ¡FALLA! duration es texto: "90 min", "2 Seasons"
