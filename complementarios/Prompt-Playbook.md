@@ -333,28 +333,28 @@ Usa esta plantilla cuando presentes resultados a gerencia que TOMARÁN DECISIONE
 Optimizar la composición del catálogo para maximizar el margen de ganancia.
 
 ### 🔑 KEY INSIGHT
-La categoría de Joyería representa solo el 10% del catálogo pero tiene el precio promedio más alto ($150 vs $80 promedio general), sugiriendo un margen superior no explotado.
+La categoría de Joyería representa el 20% del catálogo (4 de 20 referencias) con un precio promedio de $221.00, un 36% por encima del promedio general ($162.05), lo que **sugiere** un ticket alto poco explotado. *(La API no expone costos ni unidades vendidas: el margen superior es una hipótesis por validar, no un hallazgo.)*
 
 ### 💡 RECOMMENDATION
-Expandir Joyería de 2 a 8 productos en 6 meses.
-- **Qué:** Añadir 6 productos nuevos (2 medios, 2 premium, 2 accesorios)
+Expandir Joyería de 4 a 8 productos en 6 meses.
+- **Qué:** Añadir 4 productos nuevos (2 de precio medio, 2 premium)
 - **Por qué:** Mayor ticket promedio = mayor revenue por transacción
-- **Impacto:** Revenue adicional estimado de $5,000/mes (+25%)
+- **Impacto:** Revenue adicional estimado de $5,000/mes (+25%) — cifra ilustrativa, requiere datos de ventas
 - **Timeline:** Sep 2026 – Feb 2027
 
 ### ⚠️ RISKS
-- **Baja demanda:** Media probabilidad, Alto impacto → Test con 4 productos inicial, monitorear conversión semanal
+- **Baja demanda:** Media probabilidad, Alto impacto → Test con 2 referencias nuevas, monitorear conversión semanal
 - **Inventario obsoleto:** Baja probabilidad, Medio impacto → Consignación con proveedores
 
 ### 📈 KPIS TO MONITOR
-- Revenue joyería: $2,000 → $8,000/mes (+300%)
+- Revenue joyería: $2,000 → $4,000/mes (+100%)
 - Margen promedio: 12% → 15% (mantener o mejorar)
 - Conversión: Monitorear semanal, objetivo >5%
 
 ### ✅ NEXT STEPS
 1. Validar proveedores (Semana 1) - Gerente de Producto
 2. Definir presupuesto (Semana 2) - Director Financiero
-3. Piloto con 4 productos (Mes 1-2) - Equipo E-commerce
+3. Piloto con 2 referencias nuevas (Mes 1-2) - Equipo E-commerce
 ```
 
 ---
