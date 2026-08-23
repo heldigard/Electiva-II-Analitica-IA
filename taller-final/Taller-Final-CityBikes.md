@@ -143,10 +143,23 @@ print(df_limpio.isnull().sum())
 df_limpio = df_limpio.dropna(subset=['free_bikes', 'empty_slots'])
 
 # Convertir timestamp a datetime
-df_limpio['timestamp'] = pd.to_datetime(df_limpio['timestamp'])
+# OJO — dato real sucio: esta API devuelve el timestamp con offset Y una 'Z' al final
+# ('2026-08-23T12:05:24.565291+00:00Z'), que NO es ISO 8601 válido y hace fallar a
+# pd.to_datetime. Quitamos la 'Z' sobrante antes de convertir. Es justo el tipo de
+# defecto que encuentras en fuentes reales y que la IA no adivina si no se lo cuentas.
+df_limpio['timestamp'] = pd.to_datetime(
+    df_limpio['timestamp'].str.replace(r'Z$', '', regex=True),
+    format='ISO8601', utc=True
+)
 
 # Crear métrica de disponibilidad
 df_limpio['total_slots'] = df_limpio['free_bikes'] + df_limpio['empty_slots']
+# Una estación sin cupos (total_slots == 0) daría 0/0 = NaN silencioso: la excluimos
+# explícitamente en lugar de arrastrar un NaN sin explicación.
+estaciones_sin_cupos = (df_limpio['total_slots'] == 0).sum()
+if estaciones_sin_cupos:
+    print(f"⚠️  {estaciones_sin_cupos} estación(es) con total_slots = 0: se excluyen de la tasa")
+df_limpio = df_limpio[df_limpio['total_slots'] > 0].copy()
 df_limpio['tasa_disponibilidad'] = df_limpio['free_bikes'] / df_limpio['total_slots']
 
 # Verificar resultado

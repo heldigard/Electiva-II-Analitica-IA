@@ -244,7 +244,8 @@ for cat, count in top_categorias.items():
 df_resueltos = df[df['es_resuelto'] == 1].copy()
 
 plt.figure(figsize=(14, 8))
-sns.boxplot(data=df_resueltos, x='categoria', y='tiempo_resolucion_horas', palette='Set2')
+sns.boxplot(data=df_resueltos, x='categoria', y='tiempo_resolucion_horas',
+            hue='categoria', palette='Set2', legend=False)
 plt.title('Tiempo de Resolución por Categoría (Solo Tickets Resueltos)')
 plt.xlabel('Categoría')
 plt.ylabel('Tiempo de Resolución (horas)')

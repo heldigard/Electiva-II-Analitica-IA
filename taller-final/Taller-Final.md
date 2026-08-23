@@ -110,7 +110,7 @@ Debe separarse en:
 
 ### Criterio 3: Análisis y Visualización (20%)
 
-> **Nota:** Este criterio se redujo del 25% al 20%. Las visualizaciones son herramientas para comunicar, no el objetivo principal. Lo valioso es el **insight** que comunican, no el gráfico en sí.
+> **Nota:** Las visualizaciones son herramientas para comunicar, no el objetivo principal. Lo valioso es el **insight** que comunican, no el gráfico en sí.
 
 | Nivel | Descripción | Puntos |
 |-------|-------------|--------|
