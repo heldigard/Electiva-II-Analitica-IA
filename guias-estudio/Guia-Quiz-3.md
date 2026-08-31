@@ -9,6 +9,7 @@ Esta guía integra el ciclo completo del curso: obtener datos de una API, valida
 - Banco disponible: **20 preguntas**.
 - Cada intento presenta **5 preguntas seleccionadas aleatoriamente**.
 - Tienes **3 intentos** y se conserva la **nota más alta**.
+- Disponible desde el **10 de agosto de 2026 a las 00:00** hasta el **14 de septiembre de 2026 a las 23:59**.
 
 ## 1. Flujo completo de un proyecto analítico
 

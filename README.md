@@ -222,6 +222,7 @@ El curso es asincrónico y la asistencia no se usa para calcular la nota. La eva
 - La plataforma selecciona **5 preguntas aleatorias** en cada intento.
 - Cada estudiante dispone de **3 intentos**.
 - Se conserva la **nota más alta**.
+- Los tres quices están disponibles desde el **10 de agosto de 2026 a las 00:00** hasta el **14 de septiembre de 2026 a las 23:59**.
 - La retroalimentación de respuestas permanece desactivada durante los intentos.
 
 ### Foro evaluable
