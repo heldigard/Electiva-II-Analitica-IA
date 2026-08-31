@@ -170,4 +170,3 @@ En cada caso, explica también qué verificarías antes de comunicar el resultad
 - [Prompt Playbook](../complementarios/Prompt-Playbook.md)
 - [Plantillas de prompts 2026](../complementarios/Prompt-Templates-2026.md)
 - [AI Reliability Checklist](../complementarios/AI-Reliability-Checklist.md)
-

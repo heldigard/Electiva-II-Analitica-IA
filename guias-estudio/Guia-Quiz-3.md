@@ -222,4 +222,3 @@ En cada explicación incluye qué validar, qué límite comunicar y qué acción
 - [AI Reliability Checklist](../complementarios/AI-Reliability-Checklist.md)
 - [Guía de ética y privacidad](../complementarios/Data-Ethics-Guide.md)
 - [Opciones de práctica integradora](../taller-final/)
-

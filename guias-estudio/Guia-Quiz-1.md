@@ -163,4 +163,3 @@ Tu explicación debe mencionar la elección del modelo, el riesgo, el prompt nec
 - [Plantillas de prompts 2026](../complementarios/Prompt-Templates-2026.md)
 - [AI Reliability Checklist](../complementarios/AI-Reliability-Checklist.md)
 - [Guía de ética y privacidad](../complementarios/Data-Ethics-Guide.md)
-
