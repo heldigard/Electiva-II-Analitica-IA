@@ -43,7 +43,7 @@ Todas las sesiones son **virtuales**, de **6:00 a 9:15 p.m.**, con dos descansos
 | **Lun 24-ago** | 📊 **Clase 2** | Visualización, insights, el LLM como guía del análisis |
 | Lun 31-ago | 🗓️ **HOLGURA** | *Política universidad:* espacio **solo para resolver dudas** — sin contenido nuevo ni evaluación |
 | **Lun 7-sep** | 🏆 **Clase 3** | APIs, Proyecto Integrador y Taller Final |
-| Dom 13-sep | 📤 **Entrega Taller Final** | Hasta las 11:59 p.m. por el portal |
+| Dom 13-sep | 🧪 **Cierre de práctica integradora** | Fecha recomendada para completar el proyecto de práctica; no tiene ponderación independiente |
 
 📹 **Clase Virtual pregrabada (APIs):** mírala a tu ritmo **entre el 24-ago y el 7-sep**.
 
@@ -123,6 +123,9 @@ El curso incluye documentos de referencia que te ayudarán durante y después de
 | 🎯 [Prompt-Templates-2026.md](complementarios/Prompt-Templates-2026.md) | Prompts avanzados categorizados | Para análisis complejos |
 | 🔒 [Data-Ethics-Guide.md](complementarios/Data-Ethics-Guide.md) | Guía de ética en manejo de datos | Siempre con datos sensibles |
 | 📝 [Ejercicios-Complementarios-Clase1.md](complementarios/Ejercicios-Complementarios-Clase1.md) | Ejercicios adicionales de práctica | Reforzar conceptos de clase 1 |
+| 📘 [Guía de estudio — Quiz 1](guias-estudio/Guia-Quiz-1.md) | Modelos, prompting, validación y uso responsable | Antes del Quiz 1 |
+| 📗 [Guía de estudio — Quiz 2](guias-estudio/Guia-Quiz-2.md) | Calidad de datos, visualización e insights | Antes del Quiz 2 |
+| 📙 [Guía de estudio — Quiz 3](guias-estudio/Guia-Quiz-3.md) | APIs, proyecto integrador y decisiones con datos | Antes del Quiz 3 |
 
 ---
 
@@ -203,41 +206,33 @@ El curso sigue una metodología estructurada para trabajar con IA:
 
 ## ✅ Evaluación
 
-Las dos actividades cortas se realizan **en clase**. El Taller Final se inicia con acompañamiento en la Clase 3 y se termina en casa antes de la fecha de entrega.
+El curso es asincrónico y la asistencia no se usa para calcular la nota. La evaluación oficial se realiza en el portal de estudiantes mediante tres quices y un foro individual.
 
-| Componente | Peso | Momento | Descripción |
-|------------|------|---------|-------------|
-| 📝 **Actividad Calificable 1** | 20% | Clase 1 (10-ago) | Ejercicio de exploración de datos con Netflix |
-| 📝 **Actividad Calificable 2** | 20% | Clase 2 (24-ago) | Análisis de visualización y extracción de insights |
-| 🏆 **Taller Final** | 60% | Clase 3 (7-sep) → entrega 13-sep | Proyecto integrador completo (ELIGE UNA OPCIÓN) |
+| Componente | Peso | Contenido principal |
+|------------|-----:|---------------------|
+| 📝 **Quiz 1 — Modelos, prompting y uso responsable** | 27,5% | Selección de modelos, prompts, validación, privacidad y responsabilidad humana |
+| 📊 **Quiz 2 — Análisis, visualización e insights** | 27,5% | Preguntas de negocio, calidad de datos, gráficos e interpretación responsable |
+| 🏆 **Quiz 3 — Proyecto integrador y decisiones con datos** | 30% | APIs, transformación, reproducibilidad, límites y comunicación ejecutiva |
+| 💬 **Foro — Decisión analítica con apoyo de IA** | 15% | Un aporte individual en un único hilo; no exige responder a otros estudiantes |
+| **Total** | **100%** | |
 
-> 🗓️ **Holgura (31-ago):** por política de la universidad, ese espacio es **únicamente para resolver dudas**. No hay contenido nuevo ni actividades calificables — aprovecha para llegar sin preguntas pendientes a la Clase 3.
+### Configuración de los quices
 
-### 📋 Detalle de Actividades Calificables
+- Cada quiz tiene un banco de **20 preguntas**.
+- La plataforma selecciona **5 preguntas aleatorias** en cada intento.
+- Cada estudiante dispone de **3 intentos**.
+- Se conserva la **nota más alta**.
+- La retroalimentación de respuestas permanece desactivada durante los intentos.
 
-**Actividad 1 (Clase 1 - 20%):**
-- Ejercicio guiado de exploración del dataset Netflix
-- Interpretar una salida de `.head()`, `.info()` o `.describe()`
-- Identificar un problema de datos y justificar cómo tratarlo
-- Responder una pregunta con código generado mediante un prompt claro
-- **Entregable:** 3 evidencias: exploración, decisión de calidad y respuesta analítica interpretada
+### Foro evaluable
 
-**Actividad 2 (Clase 2 - 20%):**
-- Crear 1 visualización con interpretación de negocio (un segundo gráfico es ampliación opcional)
-- Aplicar el framework Insight vs. Observación
-- Usar el Decision Flow de gráficos correctamente
-- **Entregable:** 1 gráfico + justificación de la elección + párrafo de insight verificable
+El foro usa el tipo **Debate único**. Cada estudiante publica un aporte individual de 220 a 300 palabras sobre una decisión profesional apoyada por IA y datos. Debe incluir pregunta de negocio, selección razonada de modelos, datos y privacidad, visualización o indicador, un insight respaldado y una limitación. **No es obligatorio responder a otro estudiante.**
 
-**Taller Final (Clase 3 - 60%):**
-- Proyecto completo de análisis de datos con API
-- Resumen ejecutivo obligatorio
-- Se inicia en la Clase 3 (Bloque 3, 8:30–9:05 p.m. con acompañamiento) y se termina en casa
-- **Entrega:** domingo 13 de septiembre, 11:59 p.m. por el portal
-- **Entregable:** Notebook completo (.ipynb)
+> 🗓️ **Holgura (31-ago):** por política de la universidad, ese espacio es únicamente para resolver dudas. No hay contenido nuevo ni una actividad calificable adicional.
 
-### 📋 Taller Final - Cuatro Opciones Disponibles
+### 📋 Práctica integradora — Cuatro opciones disponibles
 
-El curso ofrece **CUATRO proyectos finales** para que escojas según tus intereses:
+El repositorio conserva cuatro proyectos completos como práctica y preparación para el Quiz 3. No tienen una ponderación independiente dentro del esquema de evaluación.
 
 | Opción | Tema | Contexto | Enfoque |
 |:------:|------|----------|---------|

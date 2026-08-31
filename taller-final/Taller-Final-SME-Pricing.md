@@ -3,7 +3,7 @@
 
 **Modalidad:** Individual/Grupal (máx. 3 personas)
 **Entregable:** Notebook de Google Colab (`.ipynb`)
-**Peso:** 60% de la nota final
+**Uso:** práctica integradora de preparación para el Quiz 3, sin ponderación independiente
 
 ---
 

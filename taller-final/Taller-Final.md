@@ -12,7 +12,7 @@
 | **Duración** | Se inicia en clase y se termina en casa hasta la fecha definida en el curso |
 | **Modalidad** | Individual/Grupal (máx. 3 personas) |
 | **Entregable** | Notebook de Google Colab (.ipynb) |
-| **Peso** | 60% de la nota final |
+| **Uso** | Práctica integradora de preparación para el Quiz 3, sin ponderación independiente |
 
 ---
 
@@ -270,7 +270,7 @@ Antes de entregar, verifica:
 - [ ] Cada visualización tiene título y etiquetas
 - [ ] Respondes las 4 preguntas de negocio
 - [ ] Incluyes interpretación/insight para cada análisis
-- [ ] **Incluyes un resumen ejecutivo (OBLIGATORIO - 20% de la nota)**
+- [ ] **Incluyes un resumen ejecutivo (criterio 5 de la rúbrica de práctica)**
 
 ---
 
@@ -300,4 +300,3 @@ La IA es tu copiloto, pero **tú eres el analista** que interpreta y da valor a 
 ---
 
 *Universidad UdeColombia - Especialización en Analítica de Datos - 2026*
-
