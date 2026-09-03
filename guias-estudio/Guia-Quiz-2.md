@@ -72,7 +72,7 @@ La elección depende de la pregunta y de los tipos de variables.
 | Ver una evolución temporal | Líneas | Ordenar las fechas y revisar periodos faltantes |
 | Entender una distribución | Histograma | Elegir intervalos razonables y leer forma, centro y dispersión |
 | Explorar relación entre dos variables numéricas | Dispersión | No convertir correlación en causalidad |
-| Comparar distribución y detectar atípicos entre grupos | Boxplot | Explicar mediana, cuartiles y puntos extremos |
+| Comparar distribución y detectar atípicos entre grupos | Boxplot (diagrama de caja) | Explicar mediana, cuartiles y puntos extremos |
 
 Si hay demasiadas categorías, suele ser mejor ordenar, mostrar las principales y agrupar el resto como “Otros”, siempre que esa agrupación no oculte información relevante.
 
@@ -158,7 +158,7 @@ En cada caso, explica también qué verificarías antes de comunicar el resultad
 - [ ] Sé para qué sirven `head()`, `info()` y `describe()`.
 - [ ] Distingo duplicados, faltantes, categorías inconsistentes y celdas multivalor.
 - [ ] Investigo los valores atípicos antes de eliminarlos.
-- [ ] Elijo barras, líneas, histograma, dispersión o boxplot según la pregunta.
+- [ ] Elijo barras, líneas, histograma, dispersión o boxplot (diagrama de caja) según la pregunta.
 - [ ] Reviso orden temporal, periodos faltantes, unidades, ejes y etiquetas.
 - [ ] Distingo una observación de un insight accionable.
 - [ ] No confundo correlación con causalidad.
