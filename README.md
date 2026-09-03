@@ -44,6 +44,7 @@ Todas las sesiones son **virtuales**, de **6:00 a 9:15 p.m.**, con dos descansos
 | Lun 31-ago | 🗓️ **HOLGURA** | *Política universidad:* espacio **solo para resolver dudas** — sin contenido nuevo ni evaluación |
 | **Lun 7-sep** | 🏆 **Clase 3** | APIs, Proyecto Integrador y Taller Final |
 | Dom 13-sep | 🧪 **Cierre de práctica integradora** | Fecha recomendada para completar el proyecto de práctica; no tiene ponderación independiente |
+| **Lun 14-sep** | ✅ **Cierre del curso** | Último día para presentar los tres quices y publicar el aporte del foro (11:59 p.m.) |
 
 📹 **Clase Virtual pregrabada (APIs):** mírala a tu ritmo **entre el 24-ago y el 7-sep**.
 
