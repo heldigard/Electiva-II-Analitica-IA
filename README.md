@@ -34,6 +34,8 @@ Tu Criterio + Capacidad de Razonamiento + Herramientas de IA = Análisis Profesi
 
 ## 📅 Calendario — Cohorte Agosto–Septiembre 2026
 
+> ✅ **Cohorte finalizada** — plazo vencido el 14-sep-2026 y notas definitivas cargadas el 21-sep-2026. El material queda publicado como referencia y base para la siguiente cohorte.
+
 Todas las sesiones son **virtuales**, de **6:00 a 9:15 p.m.**, con dos descansos de 15 minutos (bloques de 60 + 60 + 45 minutos).
 
 | Fecha | Sesión | Detalle |
