@@ -9,7 +9,7 @@ Esta guía reúne los conceptos que debes comprender y aplicar antes de presenta
 - Banco disponible: **20 preguntas**.
 - Cada intento presenta **5 preguntas seleccionadas aleatoriamente**.
 - Tienes **3 intentos** y se conserva la **nota más alta**.
-- Disponible desde el **10 de agosto de 2026 a las 00:00** hasta el **14 de septiembre de 2026 a las 23:59**.
+- Disponible desde el **19 de octubre de 2026 a las 00:00** hasta el **9 de noviembre de 2026 a las 23:59**.
 - Las preguntas son situacionales: debes escoger la decisión más responsable, no solo recordar una definición.
 
 ## 1. Aplicación, proveedor y modelo no son lo mismo
